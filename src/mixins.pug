@@ -5,3 +5,19 @@ mixin icon(name, className)
 
 mixin image(path, className)
   img(src=require(`images/${path}`) class=className)
+
+mixin nav(className, items, activeItem)
+  nav(class=`${className} nav`) 
+    ul(class=`nav__list`)
+      each item in items
+        li(class=`nav__item`) 
+          a(href="#" class=`nav__link`)= item
+
+mixin socials(className, classIcons, items)
+  ul(class=`${className} socials__list`)
+    each item in items 
+      li(class=`socials__item ${item}`)
+        a(href="#" class=`social__link`)
+          - var icon = require(`images/icons/${item}.svg`);
+          svg(class=classIcons viewBox=icon.viewBox preserveAspectRatio="none")
+            use(xlink:href=icon.url)
