@@ -11,9 +11,14 @@
 .about__greeting {
   width: 100%;
   display: flex;
-  justify-content: space-around;
   align-items: center;
   margin-bottom: 80px;
+}
+
+.about__avatar {
+  width: 40%;
+  display: flex;
+  justify-content: center;
 }
 
 .about__photo {
@@ -29,17 +34,28 @@
 }
 .about__greeting-cont {
   max-width: 530px;
+  p {
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+}
 
+.about__name {
+  font-size: 36px;
+  color: $slate;
+  font-weight: bold;
+  margin-bottom: 35px;
 }
 
 .about__content {
   display: flex;
   width: 100%;
-  justify-content: space-around;
 }
 
 .about__table {
   display: flex;
+  width: 40%;
+  justify-content: center;
 }
 
 .about__listname {
@@ -57,4 +73,5 @@
 
 .about__text {
   max-width: 530px;
+  font-style: italic;
 }
