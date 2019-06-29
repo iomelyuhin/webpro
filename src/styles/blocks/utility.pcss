@@ -5,21 +5,85 @@
 }
 
 .utility__title {
-  font-size: 30px;
-  font-weight: bold;
-  color: $slate;
   margin-bottom: 60px;
 }
 
-.utility__content {
+.utility__text {
+  max-width: 70%;
+  font-weight: 600;
+  line-height: 1.88;
+  margin-bottom: 90px;
+}
+
+.container--utility {
   display: flex;
 }
 
 .utility__image {
   position: relative;
   left: -7%;
+  display: flex;
+  align-items: center;
 }
 
 .utility__pic {
-  max-height: 627px;
+  max-width: 400px;
+}
+
+.utility__infograms {
+  margin-left: 90px;
+}
+
+.utility__infograms-tittle {
+  font-size: 24px;
+  font-weight: bold;
+  color: $slate;
+  margin-bottom: 40px;
+}
+
+.utility__infograms-list {
+  display: flex;
+  justify-content: space-between;
+  width: 85%;
+  margin-bottom: 50px;
+}
+
+.utility__infograms-item {
+  height: 154px;
+  width: 154px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.percentage {
+  width: 154px;
+  height: 154px;
+  transform: rotate(-180deg);
+  position: absolute;
+}
+
+.circle {
+  fill: transparent;
+  stroke-width: 9Px;
+  stroke: $grey;
+}
+
+.circle-above {
+  stroke-width: 17Px;
+  stroke: url(#my-cool-gradient);
+  stroke-dasharray: 421;
+  stroke-dashoffset: 421;
+  animation: fill 100s linear infinite;
+  animation-play-state: paused;
+}
+
+@keyframes fill {
+  from {
+    stroke-dashoffset: 421;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
 }

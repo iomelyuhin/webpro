@@ -1,9 +1,8 @@
 include ./mixins.pug
-        //.icon-bg
-        //+image('content/user.jpg', 'user-pic')
+        
 
 <!DOCTYPE html>
-html(lang="en")
+html(lang="ru")
   head
     meta(charset="UTF-8")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
@@ -13,60 +12,47 @@ html(lang="en")
     .wrapper
       .main-bg
         include ./components/mainscreen.pug
+        include ./components/about.pug
+      include ./components/utility.pug
+      include ./components/works.pug
+      .budda-bg
+        include ./components/reviews.pug
+        include ./components/feedback.pug
+      include ./components/footer.pug
+      
+
+      
             
-        section.about
-          .container.container--about
-            .about__greeting
-              .about__avatar
-                .about__photo
-                  +image('content/user.jpg', 'about__img')
-              .about__greeting-cont 
-                p Привет, меня зовут
-                h2.about__name Омелюхин Илья
-                p Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
-              
-              
-            .about__content 
-              .about__table
-                ul.about__listname
-                  li.about__listname-item Проживаю
-                  li.about__listname-item Возраст
-                  li.about__listname-item Родился
-                ul.about__listcontent
-                  li.about__listcontent-item Киров
-                  li.about__listcontent-item 29 лет
-                  li.about__listcontent-item 30 октября 1989
-              .about__text Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
-        .trangle
-      section.utility
-        h2.utility__title Чем я могу быть полезен вам
-        .utility__content
-          .utility__image
-            +image('content/back.png', 'utility__pic')
-          .utility__desc
-            .utility__text
-              p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
-            .utility__infograms.infograms
-              .infograms__frontend
-                h3.infograms__tittle Front-end
-                ul.infograms__list
-                  li.infograms__item HTML5
-                    +percentage(20)
-                  li.infograms__item CSS3
-                    +percentage(50)
-                  li.infograms__item Javascript
-                    +percentage(70)
-                  li.infograms__item jQuery и Vue.js
-                    +percentage(90)
-                  
-              .infograms__workflow
-                h3.infograms__tittle Workflow
-                ul.infograms__list
-                  li.infograms__item HTML5
-                    +percentage(20)
-                  li.infograms__item CSS3
-                    +percentage(20)
-                  li.infograms__item Javascript
-                    +percentage(20)
-                  li.infograms__item jQuery и Vue.js
-                    +percentage(20)
+        
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      

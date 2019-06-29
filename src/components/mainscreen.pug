@@ -3,7 +3,8 @@ section.mainscreen
     include ./header.pug
     .mainscreen__content
       .mainscreen__message
-        .mainscreen__desc Личный сайт <br>веб разработчика
-        h1.mainscreen__title Омелюхин Илья
+        .mainscreen__message-wrap
+          .mainscreen__desc Личный сайт<br>веб разработчика
+          h1.mainscreen__title Омелюхин Илья
       button(type="button").mainscreen__scroll Скролл
         +icon('scroll', 'mainscreen__scroll-icon')

@@ -1,24 +1,16 @@
-.about {
-  min-height: 370px;
-
-}
-
 .container--about {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
 }
 
-.about__greeting {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  margin-bottom: 80px;
+.about__profile {
+  width: 30%;
 }
 
 .about__avatar {
-  width: 40%;
   display: flex;
   justify-content: center;
+  margin-bottom: 80px;
 }
 
 .about__photo {
@@ -26,52 +18,49 @@
   height: 200px;
   border-radius: 50%;
   overflow: hidden;
-  flex-shrink: 0;
 }
 .about__img {
   object-fit: cover;
   height: 100%;
 }
-.about__greeting-cont {
-  max-width: 530px;
-  p {
-    font-weight: 600;
-    margin-bottom: 20px;
-  }
+
+.about__cellname {
+  font-weight: 600;
+  color: $slate-30;
+  padding-right: 80px;
+  padding-bottom: 18px;
 }
 
-.about__name {
-  font-size: 36px;
+.about__cellcontent {
+  padding-bottom: 18px;
+  font-weight: 600;
   color: $slate;
-  font-weight: bold;
-  margin-bottom: 35px;
 }
 
 .about__content {
-  display: flex;
-  width: 100%;
+  width: 43%;
 }
 
-.about__table {
-  display: flex;
-  width: 40%;
-  justify-content: center;
-}
-
-.about__listname {
-  margin-right: 80px;
+.about__greeting-text {
   font-weight: 600;
-  color: $slate-30;
-  line-height: 30px;
+  font-size: 16px;
+  line-height: 1.88;
+  margin-bottom: 8px;
 }
 
-.about__listcontent {
+.about__greeting-name {
+  line-height: 1.33;
+  margin-bottom: 16px;
+}
+
+.about__desc {
   font-weight: 600;
-  color: $slate;
-  line-height: 30px;
+  font-size: 16px;
+  line-height: 1.88;
+  margin-bottom: 118px;
 }
 
 .about__text {
-  max-width: 530px;
   font-style: italic;
+  line-height: 1.88;
 }

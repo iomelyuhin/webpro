@@ -1,0 +1,21 @@
+section.about
+  .container.container--about
+    .about__profile
+      .about__avatar
+        .about__photo
+          +image('content/user.jpg', 'about__img')
+      .about__profile-content
+        table
+          - var data = [['Проживаю:', 'Киров'], ['Возраст:', '29 лет'], ['Родился:', '30 октября 1989']]
+            each row in data
+              tr
+                td.about__cellname #{row[0]}
+                td.about__cellcontent #{row[1]}
+    .about__content
+      h2.about__greeting
+        .about__greeting-text Привет, меня зовут
+        .about__greeting-name.title Омелюхин Илья
+      article.about__desc Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+      article.about__text Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+  
+  

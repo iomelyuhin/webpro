@@ -1,0 +1,39 @@
+mixin percentage (percents)
+  svg(class="percentage" veiwBox = "0 0 100 100" preserveAspectRatio="none")
+    circle(cx="75" cy="75" r="67" class="circle circle-under")
+    circle(cx="75" cy="75" r="67" class="circle circle-above" style=`animation-delay: -${percents}s`)
+    linearGradient(id="my-cool-gradient" x2="1" y2="1")
+      stop(offset="0%" stop-color="#ad00ed")
+      stop(offset="100%" stop-color="#5500f2")
+
+mixin infograms(items)
+  ul.utility__infograms-list
+   each item in items
+     li.utility__infograms-item= item.name
+       svg(class="percentage" veiwBox = "0 0 100 100" preserveAspectRatio="none")
+         circle(cx="75" cy="75" r="67" class="circle circle-under")
+         circle(cx="75" cy="75" r="67" class="circle circle-above" style=`animation-delay: -${item.perc}s`)
+         linearGradient(id="my-cool-gradient" x2="1" y2="1")
+           stop(offset="0%" stop-color="#ad00ed")
+           stop(offset="100%" stop-color="#5500f2")
+
+section.utility
+  .container.container--utility
+    .utility__image
+      +image('content/back.png', 'utility__pic')
+    .utility__desc
+      h3.utility__title.subtitle Чем я могу быть полезен вам
+      article.utility__text Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+      .utility__infograms
+        h3.utility__infograms-tittle Front-end
+        +infograms([
+          {name: "HTML5", perc: "90"},
+          {name: "CSS3", perc: "40"},
+          {name: "Javascript", perc: "50"},
+          {name: "jQuery и Vue.js", perc: "23"}])
+        h3.utility__infograms-tittle Workflow
+        +infograms([
+          {name: "Git", perc: "70"},
+          {name: "Terminal", perc: "50"},
+          {name: "Gulp", perc: "80"},
+          {name: "WebPack", perc: "40"}])

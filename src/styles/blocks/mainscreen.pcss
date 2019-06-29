@@ -1,3 +1,10 @@
+.main-bg {
+  background-image: url(../images/content/mountain-baloon.png);
+  background-size: cover;
+  min-height: 200vh;
+  margin-bottom: 170px;
+}
+
 .mainscreen {
   min-height: 100vh;
   margin-bottom: 170px;
@@ -9,17 +16,19 @@
 
 .mainscreen__message {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
   height: 60vh;
 }
 
+.mainscreen__message-wrap {
+  margin: auto;
+  display: flex;
+}
+
 .mainscreen__desc {
-  margin-bottom: 30px;
   font-size: 18px;
   width: 161px;
-  text-align: center;
+  text-align: right;
+  margin-right: 60px;
 }
 
 .mainscreen__title {
@@ -28,29 +37,32 @@
   font-size: 72px;
   font-weight: 800;
   color: $slate;
-  text-align: center;
 }
 
 .mainscreen__scroll {
   display: flex;
   justify-content: center;
-  height: 16vh;
   align-items: center;
   font-size: 18px;
   font-weight: 600;
   color: $slate;
   margin: auto;
+  transition: color .3s;
+
+  &:hover {
+    color: $blue-purple;
+    transition: color .3s;
+    .mainscreen__scroll-icon {
+      fill: $blue-purple;
+      transition: fill .3s;
+    }
+  }
 }
 
 .mainscreen__scroll-icon {
   height: 30px;
   fill: $slate;
   margin-left: 12px;
-}
+  transition: fill .3s;
 
-.trangle {
-  clip-path: polygon(0 100%, 100% 100%, 100% 0, 50% 100%, 0 0);
-  width: 100%;
-  height: 100px;
-  margin-bottom: 173px;
 }
