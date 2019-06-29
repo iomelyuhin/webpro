@@ -1,8 +1,15 @@
-.socials__list {
+.socials {
   display: flex;
 }
 
-.social__link {
+.socials__item {
+  margin-right: 40px;
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.socials__link {
   width: 25px;
   height: 25px;
   cursor: pointer;
@@ -12,8 +19,4 @@
     fill: $blue-purple;
     transition: fill .3s;
   }
-}
-
-.socials__item {
-  margin-right: 40px;
 }

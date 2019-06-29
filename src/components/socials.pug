@@ -1,0 +1,14 @@
+mixin socials(mod, items)
+  ul(class=`socials socials--${mod}`)
+    each item in items 
+      li(class=`socials__item`)
+        a(href=item.link class=`socials__link`)
+          - var icon = require(`images/icons/${item.name}.svg`);
+          svg(class="socials__link" viewBox=icon.viewBox preserveAspectRatio="none")
+            use(xlink:href=icon.url)
+
++socials('header', [
+  {name: "vk", link: "#"},
+  {name: "insta", link: "#"},
+  {name: "github", link: "#"}
+  ])

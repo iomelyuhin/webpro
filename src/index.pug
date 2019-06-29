@@ -12,19 +12,8 @@ html(lang="en")
   body
     .wrapper
       .main-bg
-        section.mainscreen
-          .container
-            header.header
-              .header__logo
-                a(href="#").header__logo-link ИО
-              +nav('header__nav', ["Главная", "Обо мне", "Навыки", "Работы", "Отзывы", "Связаться"])
-              +socials('header__socials', 'social__link', ["vk", "github", "insta"])
-            .mainscreen__content
-              .mainscreen__message
-                .mainscreen__desc Личный сайт <br>веб разработчика
-                h1.mainscreen__title Омелюхин Илья
-              .mainscreen__scroll Скролл
-                +icon('scroll', 'mainscreen__scroll-icon')
+        include ./components/mainscreen.pug
+            
         section.about
           .container.container--about
             .about__greeting
