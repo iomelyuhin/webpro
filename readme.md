@@ -1,2 +1,2 @@
-Ilya Omelyukhin
-Учебный проект для LoftSchool
+Ilya Omelyukhin <br>
+Учебный проект LoftSchool июнь 2019
