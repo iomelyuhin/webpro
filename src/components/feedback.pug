@@ -1,0 +1,18 @@
+section.feedback
+  .container
+    h2.feedback__title.title Связаться со мной
+    form.feedback__form(action="" id="myForm")
+      .feedback__form-cont
+        .feedback__form-row
+          label.feedback__form-insert
+            h5.feedback__form-name Введите ваше имя
+            input.feedback__form-enter(type="text" placeholder="Fedya" name="user-name")
+          label.feedback__form-insert
+            h5.feedback__form-name Введите ваш email
+            input.feedback__form-enter(type="text" placeholder="youremail@gmail.com" name="user-email")
+        .feedback__form-row
+          label.feedback__form-insert
+            h5.feedback__form-name Сообщение к письму
+            textarea.feedback__form-enter(type="text" placeholder="Ваше сообщение" name="user-message")
+        .feedback__form-btn-wrap
+          button.feedback__form-btn(type="submit" id="sendButton") Отправить
