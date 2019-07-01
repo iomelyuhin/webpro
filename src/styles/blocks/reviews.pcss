@@ -1,0 +1,115 @@
+.budda-bg {
+  background-image: url(../images/content/budda.jpg);
+  background-size: cover;
+  margin-bottom: 100px;
+  clip-path: polygon(0% 0%, 0% 100%, 100% 100%, 100% 0%, 50% 10%);
+}
+
+.reviews {
+  padding-top: 150px;
+  margin-bottom: 130px;
+}
+
+.reviews__title-row {
+  display: flex;
+  margin-bottom: 100px;
+}
+
+.reviews__title {
+  margin-right: 100px;
+}
+
+.reviews__btn {
+  width: 50px;
+  height: 50px;
+  border: solid 1px $dark-grey-blue;
+  border-radius: 100%;
+  transition: border-color .3s;
+  margin-right: 30px;
+
+  &:hover {
+    border-color: $blue-purple;
+    transition: border-color .3s;
+
+    .reviews__btn-arrow {
+      fill: $blue-purple;
+      transition: fill .3s;
+    }
+  }
+}
+
+.reviews__btn-arrow {
+  width: 8px;
+  height: 10px;
+  fill: $dark-grey-blue;
+}
+
+.reviews__btn--prev {
+  transform: rotate(180deg);
+  transition: fill .3s;
+}
+
+.reviews__slider {
+  display: flex;
+  width: 80%;
+  justify-content: space-between;
+}
+
+.reviews__item {
+  //width: 33%;
+  display: flex;
+
+  &::before {
+    content: "";
+    display: block;
+    min-width: 70px;
+    min-height: 60px;
+    margin-right: 20px;
+    background: svg-load('quote.svg', fill=$slate-10, width=100%, height=100%);
+    background-repeat: no-repeat;
+  }
+}
+
+.reviews__item-wrap {
+  display: flex;
+  flex-direction: column;
+  width: 63%;
+}
+
+.reviews__text {
+  font-weight: 600;
+  line-height: 1.88;
+  color: $slate-50;
+  margin-bottom: 30px;
+}
+
+.reviews__author {
+  display: flex;
+}
+
+.reviews__photo {
+  width: 75px;
+  height: 75px;
+  border-radius: 100%;
+  overflow: hidden;
+  margin-right: 31px;
+}
+
+.reviews__author-desc {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.reviews__author-name {
+  font-size: 18px;
+  font-weight: bold;
+  color: $slate;
+  line-height: 1.88;
+}
+
+.reviews__author-prof {
+  font-weight: 600;
+  color: $slate-30;
+  line-height: 1.88;
+}
