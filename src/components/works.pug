@@ -1,34 +1,58 @@
 section.works
   .container
     h2.works__title.title Мои работы
-    .works__content
-      .works__slider
-        +image('content/work-01.jpg', 'works__main-img')
-        ul.works__slider-list
-          li.works__slider-item.active
-            button(type="button").works__slide-btn
-              +image(`content/work-01.jpg`, 'works__slide-btn-img')
-          li.works__slider-item
-            button(type="button").works__slide-btn
-              +image(`content/work-02.jpg`, 'works__slide-btn-img')
-          li.works__slider-item
-            button(type="button").works__slide-btn
-              +image(`content/work-03.jpg`, 'works__slide-btn-img')
-          //li.works__slider-item
-          //  +image(`content/work-04.jpg`, 'works__slide-btn-img')
-          //li.works__slider-item
-          //  +image(`content/work-05.jpg`, 'works__slide-btn-img')
-        .works__slider-controls
-          button.works__controls-btn.works__controls-btn--prev
-            +icon('arrow', 'works__controls-btn-arrow')
-          button.works__controls-btn.works__controls-btn--next
-            +icon('arrow', 'works__controls-btn-arrow')
-      .works__info
-        .works__slider-num 2
-        ul.works__skills
-          li.works__skill-name HTML
-          li.works__skill-name CSS
-          li.works__skill-name Javascript
-        h3.works__info-title.subtitle Сайт школы образования
-        .works__text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
-        a(href="#").works__link Посмотреть сайт
+    ul.works__list
+      li.works__content.active
+        .works__slider
+          +image('content/work-01.jpg', 'works__main-img')
+          ul.works__slider-list
+            li.works__slider-item.active
+              button(type="button").works__slide-btn
+                +image(`content/work-01.jpg`, 'works__slide-btn-img')
+            li.works__slider-item
+              button(type="button").works__slide-btn
+                +image(`content/work-02.jpg`, 'works__slide-btn-img')
+            li.works__slider-item
+              button(type="button").works__slide-btn
+                +image(`content/work-03.jpg`, 'works__slide-btn-img')
+          .works__slider-controls
+            button.works__controls-btn.works__controls-btn--prev
+              +icon('arrow', 'works__controls-btn-arrow')
+            button.works__controls-btn.works__controls-btn--next
+              +icon('arrow', 'works__controls-btn-arrow')
+        .works__info
+          .works__slider-num 1
+          ul.works__skills
+            li.works__skill-name HTML
+            li.works__skill-name CSS
+            li.works__skill-name Javascript
+          h3.works__info-title.subtitle Сайт школы образования
+          .works__text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+          a(href="#").works__link Посмотреть сайт
+      li.works__content
+        .works__slider
+          +image('content/work-01.jpg', 'works__main-img')
+          ul.works__slider-list
+            li.works__slider-item.active
+              button(type="button").works__slide-btn
+                +image(`content/work-01.jpg`, 'works__slide-btn-img')
+            li.works__slider-item
+              button(type="button").works__slide-btn
+                +image(`content/work-02.jpg`, 'works__slide-btn-img')
+            li.works__slider-item
+              button(type="button").works__slide-btn
+                +image(`content/work-03.jpg`, 'works__slide-btn-img')
+          .works__slider-controls
+            button.works__controls-btn.works__controls-btn--prev
+              +icon('arrow', 'works__controls-btn-arrow')
+            button.works__controls-btn.works__controls-btn--next
+              +icon('arrow', 'works__controls-btn-arrow')
+        .works__info
+          .works__slider-num 2
+          ul.works__skills
+            li.works__skill-name HTML
+            li.works__skill-name CSS
+            li.works__skill-name Javascript
+          h3.works__info-title.subtitle Сайт школы образования
+          .works__text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+          a(href="#").works__link Посмотреть сайт

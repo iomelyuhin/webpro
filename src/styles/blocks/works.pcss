@@ -1,5 +1,12 @@
+.works {
+  margin-bottom: 100px;
+}
+
 .works__content {
-  display: flex;
+  display: none;
+  &.active{
+    display: flex;
+  }
 }
 
 .works__title {
@@ -52,7 +59,7 @@
 
   &:hover {
     .works__controls-btn-arrow {
-
+      transition: fill .3s;
       fill: $tangerine;
     }
   }
@@ -63,6 +70,8 @@
   width: 8px;
   height: 10px;
   fill: $white;
+  transition: fill .3s;
+
 }
 
 .works__controls-btn--prev {
@@ -124,10 +133,13 @@
   font-weight: bold;
   color: $cornflower-blue;
   align-items: center;
+  transition: color .3s;
   &:hover {
     color: $tangerine;
+    transition: color .3s;
     &::before {
       background: svg-load('link.svg', fill=#f29400, width=100%, height=100%);
+      transition: background .3s;
     }
   }
   &::before {
@@ -137,5 +149,6 @@
     width: 15px;
     height: 15px;
     background: svg-load('link.svg', fill=$cornflower-blue, width=100%, height=100%);
+    transition: background .3s;
   }
 }
