@@ -2,10 +2,16 @@
   display: flex;
 }
 
+.works__title {
+  margin-bottom: 60px;
+}
+
 .works__slider {
+  z-index: 2;
   width: 49%;
   position: relative;
   margin-bottom: 50px;
+  margin-right: 106px;
 }
 
 .works__slide-btn {
@@ -28,7 +34,7 @@
   right: 0;
 }
 
-.works__slider-item{
+.works__slider-item {
   &.active {
     border: solid 3px $tangerine;
   }
@@ -43,13 +49,14 @@
   width: 50px;
   height: 50px;
   background-color: $dark-grey-blue;
+
   &:hover {
-    .works__controls-btn-arrow{
+    .works__controls-btn-arrow {
 
       fill: $tangerine;
     }
   }
-  
+
 }
 
 .works__controls-btn-arrow {
@@ -61,10 +68,74 @@
 .works__controls-btn--prev {
   transform: rotate(-90deg);
 }
+
 .works__controls-btn--next {
   transform: rotate(90deg);
 }
 
 .works__info {
   width: 40%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.works__slider-num {
+  position: absolute;
+  color: $white-grey;
+  font-size: 300px;
+  font-weight: 800;
+  line-height: 0.67;
+  top: 0;
+  left: -32%;
+  z-index: 1;
+}
+
+.works__skills {
+  display: flex;
+}
+
+.works__skill-name {
+  padding: 16px 20px;
+  margin-right: 15px;
+  background-color: $faded-blue;
+  border-radius: 27px;
+  font-size: 15px;
+  font-weight: 600;
+  color: $dark-70;
+}
+
+.works__info-title {
+  width: 205px;
+  line-height: 1.6;
+}
+
+.works__text {
+  width: 60%;
+  color: $slate-70;
+  font-weight: 600;
+  line-height: 1.88;
+}
+
+.works__link {
+  display: flex;
+  width: 40%;
+  font-size: 18px;
+  font-weight: bold;
+  color: $cornflower-blue;
+  align-items: center;
+  &:hover {
+    color: $tangerine;
+    &::before {
+      background: svg-load('link.svg', fill=#f29400, width=100%, height=100%);
+    }
+  }
+  &::before {
+    content: "";
+    display: flex;
+    margin-right: 20px;
+    width: 15px;
+    height: 15px;
+    background: svg-load('link.svg', fill=$cornflower-blue, width=100%, height=100%);
+  }
 }
