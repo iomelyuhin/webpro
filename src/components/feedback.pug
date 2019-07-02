@@ -6,13 +6,19 @@ section.feedback
         .feedback__form-row
           label.feedback__form-insert
             h5.feedback__form-name Введите ваше имя
-            input.feedback__form-enter(type="text" placeholder="Fedya" name="user-name")
+            .feedback__form-enter-wrap
+              input.feedback__form-enter(type="text" placeholder="Fedya" name="user-name")
+              +icon('user', 'feedback__form-icon')
           label.feedback__form-insert
             h5.feedback__form-name Введите ваш email
-            input.feedback__form-enter(type="text" placeholder="youremail@gmail.com" name="user-email")
+            .feedback__form-enter-wrap
+              input.feedback__form-enter(type="text" placeholder="youremail@gmail.com" name="user-email") 
+              +icon('envelope', 'feedback__form-icon')
         .feedback__form-row
           label.feedback__form-insert
             h5.feedback__form-name Сообщение к письму
-            textarea.feedback__form-enter(type="text" placeholder="Ваше сообщение" name="user-message")
-        .feedback__form-btn-wrap
-          button.feedback__form-btn(type="submit" id="sendButton") Отправить
+            .feedback__form-enter-wrap
+              textarea.feedback__form-enter(type="text" placeholder="Ваше сообщение" name="user-message")
+              +icon('message', 'feedback__form-icon')
+      .feedback__form-btn-wrap
+        button.feedback__form-btn(type="submit" id="sendButton") Отправить

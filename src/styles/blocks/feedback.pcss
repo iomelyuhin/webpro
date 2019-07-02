@@ -1,3 +1,96 @@
 .feedback {
   padding-bottom: 166px;
 }
+
+.feedback__title {
+  margin-bottom: 90px;
+}
+
+.feedback__form-cont {
+  width: 60%;
+  margin-bottom: 60px;
+}
+
+.feedback__form-row {
+  display: flex;
+  margin-bottom: 35px;
+}
+
+.feedback__form-insert {
+  width: 100%;
+  flex: 1;
+  margin-right: 50px;
+  position: relative;
+
+  &:last-child {
+    margin-right: 0px;
+
+  }
+}
+
+.feedback__form-name {
+  margin-bottom: 25px;
+  font-size: 16px;
+  font-weight: 600;
+  color: $slate-30;
+}
+
+.feedback__form-enter {
+  width: 100%;
+  padding: 19px 0px 19px 46px;
+  position: relative;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid $slate;
+  resize: none;
+  font-size: 18px;
+  font-weight: bold;
+  ine-height: 2.67;
+  color: $slate;
+
+  &:focus {
+    border-bottom-color: $blue-purple;
+  }
+}
+
+.feedback__form-icon {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  fill: $slate-30;
+}
+
+.feedback__form-enter-wrap {
+  position: relative;
+
+  &:hover {
+    .feedback__form-icon {
+      fill: $blue-purple;
+    }
+
+    .feedback__form-enter {
+      border-bottom-color: $blue-purple;
+    }
+  }
+}
+
+.feedback__form-btn {
+  padding: 34px 120px;
+  background-image: linear-gradient(to right, $vibrant-purple, $blue-purple);
+  font-size: 18px;
+  font-weight: bold;
+  color: $white;
+  text-transform: uppercase;
+  border-top-left-radius: 40px;
+  transition: background-image .3s;
+  border-bottom-right-radius: 40px;
+
+  &:hover {
+    transition: background-image .3s;
+    background-image: linear-gradient(to right, $blue-purple, $blue-purple);
+  }
+}
