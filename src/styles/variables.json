@@ -17,10 +17,10 @@
   "black": "#363636",
   "dark-grey-blue": "#2d3c4e",
   "dark": "#1f232d",
-  "bp-desktop-hd": "1800px",
   "grey": "#eaeaea",
   "tangerine": "#f29400",
   "white": "#fff",
+  "bp-desktop-hd": "1800px",
   "bp-desktop": "1200px",
   "bp-tablets": "768px",
   "bp-phones": "480px"
