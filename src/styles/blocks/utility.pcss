@@ -7,6 +7,9 @@
 
 .utility__title {
   margin-bottom: 60px;
+  @include tablets {
+    text-align: center;
+  }
 }
 
 .utility__text {
@@ -14,10 +17,18 @@
   font-weight: 600;
   line-height: 1.88;
   margin-bottom: 90px;
+  @include tablets {
+    text-align: center;
+    align-self: center;
+  }
 }
 
 .container--utility {
   display: flex;
+  @include tablets {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
 }
 
 .utility__image {
@@ -29,10 +40,24 @@
 
 .utility__pic {
   max-width: 400px;
+  @include tablets {
+    max-width: 185px;
+
+  }
+}
+
+.utility__desc {
+  @include tablets {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .utility__infograms {
   margin-left: 90px;
+  @include tablets {
+    margin-left: 0;
+  }
 }
 
 .utility__infograms-tittle {
@@ -45,13 +70,13 @@
 .utility__infograms-list {
   display: flex;
   justify-content: space-between;
-  width: 85%;
-  margin-bottom: 50px;
+  //width: 85%;
+  margin-bottom: 50px; 
 }
 
 .utility__infograms-item {
-  height: 154px;
-  width: 154px;
+  height: 154Px;
+  width: 154Px;
   position: relative;
   display: flex;
   justify-content: center;
@@ -61,8 +86,8 @@
 }
 
 .percentage {
-  width: 154px;
-  height: 154px;
+  width: 154Px;
+  height: 154Px;
   transform: rotate(-180deg);
   position: absolute;
 }

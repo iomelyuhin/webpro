@@ -4,6 +4,10 @@
   min-height: 200vh;
   margin-bottom: 100px;
   clip-path: polygon(0% 0%, 0% 90%, 50% 100%, 100% 90%, 100% 0%);
+
+  @include tablets {
+    clip-path: polygon(0% 0%, 0% 97%, 50% 100%, 100% 97%, 100% 0%);
+  }
 }
 
 .mainscreen {
@@ -23,6 +27,12 @@
 .mainscreen__message-wrap {
   margin: auto;
   display: flex;
+
+  @include tablets {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
 }
 
 .mainscreen__desc {
@@ -30,6 +40,12 @@
   width: 161px;
   text-align: right;
   margin-right: 60px;
+
+  @include tablets {
+    margin-right: 0px;
+    text-align: center;
+    margin-bottom: 25px;
+  }
 }
 
 .mainscreen__title {
@@ -50,9 +66,14 @@
   margin: auto;
   transition: color .3s;
 
+  @include tablets {
+    display: none;
+  }
+
   &:hover {
     color: $blue-purple;
     transition: color .3s;
+
     .mainscreen__scroll-icon {
       fill: $blue-purple;
       transition: fill .3s;
