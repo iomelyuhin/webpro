@@ -10,6 +10,10 @@
   @include tablets {
     text-align: center;
   }
+  @include phones {
+    text-align: left;
+
+  }
 }
 
 .utility__text {
@@ -17,9 +21,16 @@
   font-weight: 600;
   line-height: 1.88;
   margin-bottom: 90px;
+  font-weight: 600;
   @include tablets {
     text-align: center;
     align-self: center;
+  }
+  @include phones{
+    text-align: left;
+    align-self: flex-start;
+    max-width: 100%;
+
   }
 }
 
@@ -43,6 +54,10 @@
   @include tablets {
     max-width: 185px;
 
+  }
+
+  @include phones {
+    max-width: 158px;
   }
 }
 
@@ -72,6 +87,9 @@
   justify-content: space-between;
   //width: 85%;
   margin-bottom: 50px; 
+  @include phones {
+    flex-wrap: wrap;
+  }
 }
 
 .utility__infograms-item {
@@ -83,6 +101,10 @@
   align-items: center;
   font-size: 18px;
   font-weight: bold;
+  @include phones {
+    width: 40%;
+    margin-bottom: 20px;
+  }
 }
 
 .percentage {

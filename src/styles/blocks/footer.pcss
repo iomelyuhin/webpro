@@ -7,12 +7,22 @@
 
 .container--footer {
   display: flex;
+
+  @include phones {
+    flex-direction: column;
+  }
 }
 
 .footer__copyright {
   width: 25%;
+
   @include tablets {
     width: 40%;
+  }
+
+  @include phones {
+    width: 100%;
+    margin-bottom: 50px;
   }
 }
 
@@ -30,39 +40,53 @@
   width: 100px;
   line-height: 1.67;
   margin-bottom: 20px;
+  @include phones {
+    width: 100%;
+  }
 }
 
 .footer__desc {
   line-height: 1.88;
   color: $white-15;
   width: 140px;
+  @include phones {
+    width: 100%;
+  }
 }
 
 .navigation--footer {
   width: 62%;
   margin-bottom: 70px;
+
   @include tablets {
     margin-bottom: 50px;
     width: 100%;
   }
+
   .navigation__list {
     flex-wrap: wrap;
     justify-content: flex-start;
   }
+
   .navigation__link {
     color: $white;
 
   }
+
   .navigation__item {
     @include tablets {
       width: 25%;
       margin-bottom: 30px;
+    }
+    @include phones {
+      width: 50%;
     }
   }
 }
 
 .footer__about-wrap {
   display: flex;
+
   @include tablets {
     flex-direction: column;
     margin-bottom: 10px;
@@ -71,9 +95,11 @@
 
 .footer__about {
   width: 40%;
+
   @include tablets {
     width: 85%;
     margin-bottom: 50px;
+
     &:last-child {
       margin-bottom: 0px;
 
@@ -101,7 +127,8 @@
     &:hover {
       border-color: $blue-purple;
       transition: border-color .3s;
-      .socials__link{
+
+      .socials__link {
         fill: $blue-purple;
         transition: fill .3s;
       }
@@ -117,6 +144,7 @@
 
 .footer__quote-text {
   margin: 0;
+
   p {
     margin-bottom: 30px;
   }

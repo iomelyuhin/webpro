@@ -2,6 +2,12 @@
   margin-bottom: 100px;
 }
 
+.container--works {
+  @include phones {
+    width: 100%;
+  }
+}
+
 .works__content {
   display: none;
   position: relative;
@@ -15,6 +21,7 @@
 
 .works__title {
   margin-bottom: 60px;
+  margin-left: 30px;
 }
 
 .works__slider {
@@ -26,6 +33,10 @@
   @include tablets {
     margin-bottom: 100px;
     width: 88%;
+  }
+  @include phones {
+    margin-right: 0;
+    width: 100%;
   }
 }
 
@@ -46,6 +57,9 @@
   width: 28%;
   bottom: 0;
   right: 0;
+  @include phones {
+    display: none;
+  }
 }
 
 .works__slider-item {
@@ -57,6 +71,9 @@
 .works__slider-controls {
   position: absolute;
   right: 0;
+  @include phones {
+    transform: translateY(-100%)
+  }
 }
 
 .works__controls-btn {
@@ -100,6 +117,11 @@
     width: 100%;
     align-items: center;
   }
+
+  @include phones {
+    align-items: flex-start;
+    margin-left: 30px;
+  }
 }
 .works__slider-num {
   position: absolute;
@@ -140,6 +162,10 @@
     margin-bottom: 25px;
     text-align: center;
   }
+  @include phones {
+    text-align: left;
+    width: 85%;
+  }
 }
 
 .works__text {
@@ -150,6 +176,11 @@
   @include tablets {
     margin-bottom: 25px;
     text-align: center;
+  }
+  @include phones {
+    text-align: left;
+    width: 85%;
+
   }
 }
 
@@ -166,6 +197,12 @@
     width: 100%;
     justify-content: center;
   }
+  @include phones {
+    width: 85%;
+    justify-content: flex-start;
+
+  }
+
   &:hover {
     color: $tangerine;
     transition: color .3s;

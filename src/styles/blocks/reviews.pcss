@@ -17,10 +17,19 @@
 .reviews__title-row {
   display: flex;
   margin-bottom: 100px;
+  @include phones {
+    flex-direction: column;
+    align-items: center;
+  } 
 }
 
 .reviews__title {
   margin-right: 100px;
+  @include phones {
+  margin-right: 0px;
+  margin-bottom: 20px;
+
+  }
 }
 
 .reviews__btn {

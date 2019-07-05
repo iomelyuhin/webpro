@@ -1,11 +1,14 @@
 .about {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
 }
 .container--about {
   display: flex;
   justify-content: center;
+  @include phones {
+    flex-direction: column;
+  }
 }
 
 .about__profile {
@@ -15,6 +18,10 @@
     width: 48%;
     margin-right: 0px;
   }
+  @include phones {
+    width: 100%;
+    margin-bottom: 40px;
+  }
 }
 
 .about__avatar {
@@ -23,6 +30,11 @@
   margin-bottom: 80px;
   @include tablets {
     justify-content: flex-start;
+
+  }
+
+  @include phones {
+    justify-content: center;
 
   }
 }
@@ -51,10 +63,27 @@
   color: $slate;
 }
 
+.about__profile-content {
+  @include phones {
+    display: flex;
+    justify-content: center;
+  }
+}
+
 .about__content {
   width: 43%;
   @include tablets {
     width: 53%;
+  }
+  @include phones {
+    width: 100%;
+    margin-bottom: 100px;
+  }
+}
+
+.about__greeting {
+  @include phones {
+    margin-bottom: 40px;
   }
 }
 
@@ -63,6 +92,7 @@
   font-size: 16px;
   line-height: 1.88;
   margin-bottom: 8px;
+  
 }
 
 .about__greeting-name {
@@ -75,6 +105,10 @@
   font-size: 16px;
   line-height: 1.88;
   margin-bottom: 85px;
+  @include phones {
+    margin-bottom: 40px;
+    
+  }
 }
 
 .about__text {

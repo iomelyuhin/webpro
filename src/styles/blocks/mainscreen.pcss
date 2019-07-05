@@ -1,7 +1,7 @@
 .main-bg {
   background-image: url(../images/content/mountain-baloon.png);
   background-size: cover;
-  min-height: 200vh;
+  //min-height: 200vh;
   margin-bottom: 100px;
   clip-path: polygon(0% 0%, 0% 90%, 50% 100%, 100% 90%, 100% 0%);
 
@@ -54,6 +54,11 @@
   font-size: 72px;
   font-weight: 800;
   color: $slate;
+  @include phonesMini {
+    width:100%;
+    font-size: 60px;
+    
+  }
 }
 
 .mainscreen__scroll {

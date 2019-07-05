@@ -22,7 +22,9 @@
 .feedback__form-row {
   display: flex;
   margin-bottom: 35px;
-
+  @include phones {
+    flex-direction: column;
+  }
 }
 
 .feedback__form-insert {
@@ -33,7 +35,12 @@
 
   &:last-child {
     margin-right: 0px;
-
+    @include phones {
+      margin-bottom: 0px;
+    }
+  }
+  @include phones {
+    margin-bottom: 35px;
   }
 }
 
