@@ -3,6 +3,10 @@
   background-size: cover;
   background-position: center;
   clip-path: polygon(0% 0%, 0% 100%, 100% 100%, 100% 0%, 50% 100px);
+  @include tablets {
+  clip-path: polygon(0% 0%, 0% 100%, 100% 100%, 100% 0%, 50% 50px);
+
+  }
 }
 
 .reviews {
@@ -53,6 +57,10 @@
   display: flex;
   width: 80%;
   justify-content: space-between;
+  @include tablets {
+  width: 100%;
+
+  }
 }
 
 .reviews__item {
@@ -67,6 +75,9 @@
     margin-right: 20px;
     background: svg-load('quote.svg', fill=$slate-10, width=100%, height=100%);
     background-repeat: no-repeat;
+    @include tablets {
+      display: none;
+    }
   }
 }
 
@@ -74,6 +85,10 @@
   display: flex;
   flex-direction: column;
   width: 63%;
+  @include tablets {
+  width: 75%;
+
+  }
 }
 
 .reviews__text {

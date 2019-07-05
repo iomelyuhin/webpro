@@ -4,16 +4,25 @@
 
 .feedback__title {
   margin-bottom: 90px;
+  @include tablets {
+    margin-bottom: 50px;
+    text-align: center;
+  }
 }
 
 .feedback__form-cont {
   width: 60%;
   margin-bottom: 60px;
+  @include tablets {
+    width: 100%;
+    margin-bottom: 20px;
+  }
 }
 
 .feedback__form-row {
   display: flex;
   margin-bottom: 35px;
+
 }
 
 .feedback__form-insert {
@@ -75,6 +84,13 @@
     .feedback__form-enter {
       border-bottom-color: $blue-purple;
     }
+  }
+}
+
+.feedback__form-btn-wrap {
+  @include tablets {
+    display: flex;
+    justify-content: center;
   }
 }
 

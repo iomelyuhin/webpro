@@ -11,6 +11,9 @@
 
 .footer__copyright {
   width: 25%;
+  @include tablets {
+    width: 40%;
+  }
 }
 
 .footer__year {
@@ -37,19 +40,44 @@
 
 .navigation--footer {
   margin-bottom: 70px;
-
+  @include tablets {
+    margin-bottom: 50px;
+    width: 100%;
+  }
+  .navigation__list {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
   .navigation__link {
     color: $white;
 
+  }
+  .navigation__item {
+    @include tablets {
+      width: 25%;
+      margin-bottom: 30px;
+    }
   }
 }
 
 .footer__about-wrap {
   display: flex;
+  @include tablets {
+    flex-direction: column;
+    margin-bottom: 10px;
+  }
 }
 
 .footer__about {
   width: 40%;
+  @include tablets {
+    width: 85%;
+    margin-bottom: 50px;
+    &:last-child {
+      margin-bottom: 0px;
+
+    }
+  }
 }
 
 .footer__text {
