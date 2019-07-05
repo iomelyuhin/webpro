@@ -15,6 +15,10 @@
 
 .footer__copyright {
   width: 25%;
+  @include desktopHd {
+    display: flex;
+    width: 40%;
+  }
 
   @include tablets {
     width: 40%;
@@ -23,6 +27,12 @@
   @include phones {
     width: 100%;
     margin-bottom: 50px;
+  }
+}
+
+.footer__copyright-text {
+  @include desktopHd {
+    margin-left: 40px;
   }
 }
 
@@ -64,8 +74,11 @@
   }
 
   .navigation__list {
-    flex-wrap: wrap;
-    justify-content: flex-start;
+    @include tablets {
+      flex-wrap: wrap;
+      justify-content: flex-start;
+
+    }
   }
 
   .navigation__link {
