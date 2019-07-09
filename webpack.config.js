@@ -98,7 +98,6 @@ module.exports = (env, argv) => {
       rules: [pcss, vue, js, files, svg, pug]
     },
     resolve: {
-      
       alias: {
         vue$: "vue/dist/vue.esm.js",
         images: path.resolve(__dirname, "src/images")
