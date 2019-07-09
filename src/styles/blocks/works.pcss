@@ -63,7 +63,8 @@
 }
 
 .works__slider-item {
-  &.active {
+  &.active,
+  &:hover {
     border: solid 3px $tangerine;
   }
 }
@@ -131,7 +132,7 @@
   font-weight: 800;
   line-height: 0.67;
   top: 0;
-  right: 38%;
+  right: 40%;
   z-index: 1;
   @include tablets {
     right: -2%;
@@ -210,6 +211,7 @@
     &::before {
       background: svg-load('link.svg', fill=#f29400, width=100%, height=100%);
       transition: background .3s;
+      background-repeat: no-repeat;
     }
   }
   &::before {
@@ -220,5 +222,6 @@
     height: 15px;
     background: svg-load('link.svg', fill=$cornflower-blue, width=100%, height=100%);
     transition: background .3s;
+    background-repeat: no-repeat;
   }
 }

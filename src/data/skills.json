@@ -1,0 +1,16 @@
+[
+  {
+    "rowName": "Front-end",
+    "HTMl": 32,
+    "CSS5": 90,
+    "Javascript": 55,
+    "Vue.js": 70
+  },
+  {
+    "rowName": "Workflow",
+    "Git": 75,
+    "Terminal": 50,
+    "Gulp": 60,
+    "WebPack": 50
+  }
+]

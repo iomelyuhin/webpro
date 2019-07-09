@@ -62,10 +62,15 @@
   transition: fill .3s;
 }
 
+.reviews__slider-conteiner {
+  overflow: hidden;  
+  width: 80%;
+}
+
 .reviews__slider {
   display: flex;
-  width: 80%;
   justify-content: space-between;
+  position: relative;
   @include tablets {
   width: 100%;
 
@@ -73,7 +78,7 @@
 }
 
 .reviews__item {
-  //width: 33%;
+  min-width: 50%;
   display: flex;
 
   &::before {
