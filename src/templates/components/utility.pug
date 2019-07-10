@@ -1,0 +1,26 @@
+script(type="text/x-template")#utility-list
+  .utility__cont
+    .utility__infograms(v-for="util in utilities")
+      row(
+        :util="util"
+      )
+
+script(type="text/x-template")#utility-row
+  .utility__row
+    h3.utility__infograms-tittle {{util.skillsGroup}}
+    ul.utility__infograms-list
+      li.utility__infograms-item(v-for="(perc, name) in util.skills") 
+        utility(
+          :perc="perc",
+          :name="name"
+        )
+      
+script(type="text/x-template")#utility
+  .utility__skill
+    .utility__skillname {{name}} 
+    svg(class="percentage" veiwBox = "0 0 100 100" preserveAspectRatio="none")
+      circle(cx="75" cy="75" r="67" class="circle circle-under")
+      circle(cx="75" cy="75" r="67" ref="color-circle" class="circle circle-above")
+      linearGradient(id="my-cool-gradient" x2="1" y2="1")
+        stop(offset="0%" stop-color="#ad00ed")
+        stop(offset="100%" stop-color="#5500f2")

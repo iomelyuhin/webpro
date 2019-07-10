@@ -1,16 +1,20 @@
 [
   {
-    "rowName": "Front-end",
-    "HTMl": 32,
-    "CSS5": 90,
-    "Javascript": 55,
-    "Vue.js": 70
+    "skillsGroup": "Frontend",
+    "skills": {
+      "html5": 90,
+      "css3": 50,
+      "Gulp": 70,
+      "Vue": 30
+    }
   },
   {
-    "rowName": "Workflow",
-    "Git": 75,
-    "Terminal": 50,
-    "Gulp": 60,
-    "WebPack": 50
+    "skillsGroup": "Backend",
+    "skills": {
+      "Php": 30,
+      "mySql": 60,
+      "Yarn": 30,
+      "Mongo.db": 70
+    }
   }
 ]

@@ -12,7 +12,7 @@ mixin infograms(items)
      li.utility__infograms-item= item.name
        svg(class="percentage" veiwBox = "0 0 100 100" preserveAspectRatio="none")
          circle(cx="75" cy="75" r="67" class="circle circle-under")
-         circle(cx="75" cy="75" r="67" class="circle circle-above" style=`animation-delay: -${item.perc}s`)
+         circle(cx="75" cy="75" r="67" class="circle circle-above")
          linearGradient(id="my-cool-gradient" x2="1" y2="1")
            stop(offset="0%" stop-color="#ad00ed")
            stop(offset="100%" stop-color="#5500f2")
@@ -24,5 +24,4 @@ section.utility
     .utility__desc
       h3.utility__title.subtitle Чем я могу быть полезен вам
       article.utility__text Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
-      #utility-container
-          
+      #utility-wiget

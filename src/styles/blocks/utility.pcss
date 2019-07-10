@@ -86,12 +86,14 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: 50px; 
+  flex-wrap: wrap;
+
   @include phones {
     flex-wrap: wrap;
   }
 }
 
-.utility__infograms-item {
+.utility__skill {
   height: 154Px;
   width: 154Px;
   position: relative;
@@ -109,7 +111,7 @@
 .percentage {
   width: 154Px;
   height: 154Px;
-  transform: rotate(-180deg);
+  //transform: rotate(-180deg);
   position: absolute;
 }
 
@@ -124,15 +126,6 @@
   stroke: url(#my-cool-gradient);
   stroke-dasharray: 421;
   stroke-dashoffset: 421;
-  animation: fill 100s linear infinite;
-  animation-play-state: paused;
-}
-
-@keyframes fill {
-  from {
-    stroke-dashoffset: 421;
-  }
-  to {
-    stroke-dashoffset: 0;
-  }
+  //animation: fill 100s linear infinite;
+  //animation-play-state: paused;
 }
