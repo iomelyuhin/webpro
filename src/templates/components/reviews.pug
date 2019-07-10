@@ -7,12 +7,12 @@ script(type="text/x-template")#slider-container
           +icon('arrow', 'reviews__btn-arrow')
         button.reviews__btn.reviews__btn--next(type="button" @click="next()")
           +icon('arrow', 'reviews__btn-arrow')
-    .reviews__slider
-      flickity(ref="flickity" :options="flickityOptions")
-        li.reviews__item(v-for="review in reviews" :key="review.id")
-          reviewsSlides(
-            :review="review"
-          )
+    //ul.reviews__slider
+    flickity(ref="flickity" :options="flickityOptions")
+      li.reviews__item(v-for="review in reviews" :key="review.id")
+        reviewsSlides(
+          :review="review"
+        )
 script(type="text/x-template")#reviews-slides
   .reviews__item-wrap
     article.reviews__text {{review.text}}
