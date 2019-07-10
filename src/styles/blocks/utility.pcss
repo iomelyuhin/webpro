@@ -80,6 +80,9 @@
   font-weight: bold;
   color: $slate;
   margin-bottom: 40px;
+  @include tablets {
+    text-align: center;
+  }
 }
 
 .utility__infograms-list {
@@ -87,6 +90,10 @@
   justify-content: space-between;
   margin-bottom: 50px; 
   flex-wrap: wrap;
+
+  @include tablets {
+    justify-content: space-around;
+  }
 
   @include phones {
     flex-wrap: wrap;
@@ -103,7 +110,6 @@
   font-size: 18px;
   font-weight: bold;
   @include phones {
-    width: 40%;
     margin-bottom: 20px;
   }
 }

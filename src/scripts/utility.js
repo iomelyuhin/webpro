@@ -13,7 +13,6 @@ const utility = {
         getComputedStyle(circle).getPropertyValue("stroke-dasharray")
       );
       const percent = 421 + (dashArray / 100) * this.perc;
-      console.log(percent);
       
       circle.style.strokeDasharray = percent;
     }

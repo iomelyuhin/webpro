@@ -9,12 +9,12 @@
     }
   },
   {
-    "skillsGroup": "Backend",
+    "skillsGroup": "Workflow",
     "skills": {
-      "Php": 30,
-      "mySql": 60,
-      "Yarn": 30,
-      "Mongo.db": 70
+      "Git": 30,
+      "Terminal": 60,
+      "Gulp": 30,
+      "Webpack": 70
     }
   }
 ]
