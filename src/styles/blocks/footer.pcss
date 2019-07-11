@@ -14,10 +14,14 @@
 }
 
 .footer__copyright {
-  width: 25%;
   @include desktopHd {
     display: flex;
     width: 40%;
+  }
+
+  @include desktop {
+    display: block;
+    width: 25%;
   }
 
   @include tablets {
@@ -33,6 +37,9 @@
 .footer__copyright-text {
   @include desktopHd {
     margin-left: 40px;
+  }
+  @include desktop {
+    margin-left: 0px;
   }
 }
 
