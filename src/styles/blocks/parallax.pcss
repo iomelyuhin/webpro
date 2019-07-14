@@ -6,6 +6,12 @@
 
   @include tablets {
     clip-path: polygon(0% 0%, 0% 97%, 50% 100%, 100% 97%, 100% 0%);
+    background-image: url(./../images/content/768-bg-mountains.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  @include phones {
+    background-image: url(./../images/content/320-bg-mountains.jpg);
   }
 }
 
@@ -15,8 +21,14 @@
   left: 0;
   height: 100%;
   width: 100%;
+  @include tablets{
+    display: none;
+  }
   .parallax__img {
     position: absolute;
+    @include tablets {
+      display: none;
+    }
   }
 
   &:nth-child(1){

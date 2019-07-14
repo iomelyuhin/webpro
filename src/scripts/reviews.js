@@ -7,7 +7,7 @@ const reviewsSlides = {
     review: Object
   }
 }
-
+const initialIndex = 2;
 new Vue({
   el: "#reviews-slider-wiget",
   template: "#slider-container",
@@ -18,8 +18,9 @@ new Vue({
   data () {
     return {
       reviews: [],
+      width: null,
       flickityOptions: {
-        initialIndex: 2,
+        initialIndex: initialIndex,
         prevNextButtons: false,
         pageDots: false,
         wrapAround: false,
@@ -30,7 +31,9 @@ new Vue({
     }
   },
   methods: {
-    
+    updateWidth(){
+      this.width = window.innerWidth;
+    },
     next() {
       this.$refs.flickity.next();
     },
@@ -42,5 +45,11 @@ new Vue({
   created() {
     const data = require("../data/reviews.json");
     this.reviews = data;
+    window.addEventListener('resize', this.updateWidth);
+    this.updateWidth();
+    if (this.width < 450) {
+      this.initialIndex = 1;
+    }
+    
   }
 });
