@@ -7,3 +7,4 @@ import "./scripts/utility";
 import "./scripts/works";
 import "./scripts/reviews";
 import "./scripts/parallax";
+import "./scripts/humburgermenu";

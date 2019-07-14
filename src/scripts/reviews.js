@@ -7,7 +7,6 @@ const reviewsSlides = {
     review: Object
   }
 }
-const initialIndex = 2;
 new Vue({
   el: "#reviews-slider-wiget",
   template: "#slider-container",
@@ -20,7 +19,7 @@ new Vue({
       reviews: [],
       width: null,
       flickityOptions: {
-        initialIndex: initialIndex,
+        initialIndex: 2,
         prevNextButtons: false,
         pageDots: false,
         wrapAround: false,
@@ -50,6 +49,7 @@ new Vue({
     if (this.width < 450) {
       this.initialIndex = 1;
     }
+    console.log(this.width);
     
   }
 });

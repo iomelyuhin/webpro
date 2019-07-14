@@ -1,11 +1,14 @@
 .navigation__list {
   display: flex;
   justify-content: space-between;
+
 }
+
 .navigation__link {
   display: block;
   color: $slate;
   transition: color .3s;
+
   &:hover {
     color: $slate-50;
     transition: color .3s;
@@ -14,6 +17,39 @@
 
 .navigation--header {
   @include tablets {
-    display: none;
+    position: absolute;
+    top: 0;
+    right: -100%;
+    background-color: #fff;
+    height: 100vh;
+    display: flex;
+    width: 40%;
+    align-items: center;
+    transition: right .3s;
+    
+  }
+  
+  &.active {
+    @include tablets {
+      right: 0;
+      transition: right .3s;
+    }
+  }
+
+  .navigation__list {
+    @include tablets {
+
+      justify-content: center;
+      flex-direction: column;
+      padding-left: 80px;
+      font-weight: bold;
+    }
+
+    .navigation__item {
+      @include tablets {
+
+        padding-bottom: 20px;
+      }
+    }
   }
 }
