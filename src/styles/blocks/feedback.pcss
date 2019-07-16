@@ -66,8 +66,13 @@
   color: $slate;
 
   &:focus {
-    border-bottom-color: $blue-purple;
+    border-bottom: 1px solid $blue-purple;
+    transition: border 0.3s;
   }
+}
+.feedback__form-enter:focus ~ .feedback__form-icon {
+  fill: $blue-purple;
+  transition: fill 0.3s;
 }
 
 .feedback__form-icon {
@@ -83,15 +88,6 @@
 .feedback__form-enter-wrap {
   position: relative;
 
-  &:hover {
-    .feedback__form-icon {
-      fill: $blue-purple;
-    }
-
-    .feedback__form-enter {
-      border-bottom-color: $blue-purple;
-    }
-  }
 }
 
 .feedback__form-btn-wrap {
@@ -103,7 +99,7 @@
 
 .feedback__form-btn {
   padding: 34px 120px;
-  background-image: linear-gradient(to right, $vibrant-purple, $blue-purple);
+  //background-image: linear-gradient(to right, $vibrant-purple, $blue-purple);
   font-size: 18px;
   font-weight: bold;
   color: $white;
@@ -111,9 +107,13 @@
   border-top-left-radius: 40px;
   transition: background-image .3s;
   border-bottom-right-radius: 40px;
-
+  background: linear-gradient(to left, $blue-purple, transparent 70%);
+  background-color: $vibrant-purple;
+  transition: background-color .4s;
   &:hover {
-    transition: background-image .3s;
-    background-image: linear-gradient(to right, $blue-purple, $blue-purple);
+  //background: linear-gradient(to left, $blue-purple, transparent 0%);
+  background-color: $blue-purple;
+  transition: background-color .4s;
+    
   }
 }
