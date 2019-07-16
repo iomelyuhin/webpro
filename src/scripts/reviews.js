@@ -19,12 +19,12 @@ new Vue({
       reviews: [],
       width: null,
       flickityOptions: {
-        initialIndex: 2,
+        initialIndex: 0,
         prevNextButtons: false,
         pageDots: false,
         wrapAround: false,
         adaptiveHeight: true,
-        groupCells: 2
+        groupCells: true
 
       }
     }
