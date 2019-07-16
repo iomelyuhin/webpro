@@ -34,6 +34,9 @@
       right: 0;
       transition: right .3s;
     }
+    @include phones {
+      width: 100%;
+    }
   }
 
   .navigation__list {
@@ -43,6 +46,13 @@
       flex-direction: column;
       padding-left: 80px;
       font-weight: bold;
+    }
+    @include phones {
+      font-size: 22Px;
+      text-align: center;
+      align-items: center;
+      margin: 0 auto;
+      padding-left: 0;
     }
 
     .navigation__item {

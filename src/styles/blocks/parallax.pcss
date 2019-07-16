@@ -9,9 +9,12 @@
     background-image: url(./../images/content/768-bg-mountains.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    height: 200vh;
+    background-position: center;
   }
   @include phones {
     background-image: url(./../images/content/320-bg-mountains.jpg);
+    height: 240vh;
   }
 }
 
@@ -60,19 +63,19 @@
   &:nth-child(5){
     .parallax__img {
       left: 0;
-      top: 470px;
+      bottom: -18%;
     }
   }
   &:nth-child(6){
     .parallax__img {
       right: 0;
-      bottom: 0;
+      bottom: -28%;
     }
   }
   &:nth-child(7){
     .parallax__img {
       left: 0;
-      bottom: -200px;
+      bottom: -13%;
     }
   }
 }

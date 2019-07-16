@@ -12,7 +12,9 @@
     text-align: center;
   }
   @include phones {
-    text-align: left;
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
 
   }
 }
@@ -29,9 +31,8 @@
   }
   @include phones{
     text-align: left;
-    align-self: flex-start;
-    max-width: 100%;
-
+    max-width: 80%;
+    left: 50%;
   }
 }
 
@@ -40,6 +41,9 @@
   @include tablets {
     flex-direction: column-reverse;
     align-items: center;
+  }
+  @include phones {
+    width: 100%;
   }
 }
 
