@@ -1,9 +1,10 @@
 .parallax {
   position: relative;
-  height: 210vh;
+  height: 200vh;
   overflow: hidden;
-  clip-path: polygon(0% 0%, 0% 90%, 50% 100%, 100% 90%, 100% 0%);
+  clip-path: polygon(0% 0%, 0% 85%, 50% 95%, 100% 85%, 100% 0%);
 
+  
   @include tablets {
     clip-path: polygon(0% 0%, 0% 97%, 50% 100%, 100% 97%, 100% 0%);
     background-image: url(./../images/content/768-bg-mountains.jpg);
@@ -44,7 +45,7 @@
   &:nth-child(2){
     .parallax__img {
       right: 0;
-      top: 360px;
+      top: 31%;
     }
   }
   &:nth-child(3){
@@ -63,13 +64,13 @@
   &:nth-child(5){
     .parallax__img {
       left: 0;
-      bottom: -18%;
+      bottom: -29%;
     }
   }
   &:nth-child(6){
     .parallax__img {
       right: 0;
-      bottom: -28%;
+      bottom: -30%;
     }
   }
   &:nth-child(7){
