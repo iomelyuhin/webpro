@@ -7,7 +7,7 @@
   
   @include tablets {
     clip-path: polygon(0% 0%, 0% 97%, 50% 100%, 100% 97%, 100% 0%);
-    background-image: url(./../images/content/768-bg-mountains.jpg);
+    //background-image: url(./../images/content/768-bg-mountains.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     height: 200vh;
@@ -25,12 +25,12 @@
   left: 0;
   height: 100%;
   width: 100%;
-  @include tablets{
+  @include phones{
     display: none;
   }
   .parallax__img {
     position: absolute;
-    @include tablets {
+    @include phones {
       display: none;
     }
   }

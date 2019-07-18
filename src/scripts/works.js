@@ -101,7 +101,6 @@ new Vue({
     },
     chooseSlide(index) {
       this.currentIndex = index
-      console.log(index)
     }
   },
   created() {
