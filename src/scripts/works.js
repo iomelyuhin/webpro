@@ -3,7 +3,8 @@ import Vue from 'vue';
 const thumbs = {
   template: "#works-slider-thumbs",
   props: {
-    works: Array
+    works: Array,
+    currentWork: Object
   }
 }
 
@@ -23,33 +24,59 @@ const display = {
   },
   props: {
     works: Array,
-    currentWork: Object
+    currentWork: Object,
+    currentIndex: Number
+  },
+  computed: {
+    reversedWorks() {
+      return [...this.works].reverse()
+    }
   }
 }
 
 const tags = {
-  template: "#works-slider-tags"
+  template: "#works-slider-tags",
+  props: {
+    tags: Array
+  }
 }
 
 const info = {
   template: "#works-slider-info",
-  components: {tags},
+  components: { tags },
   props: {
     currentWork: Object
-  }
+  },
+  computed: {
+    tagsArray() {
+      return this.currentWork.skills.split(', ');
+    }
+  },
 }
 
-new Vue ({
+new Vue({
   el: "#works-slider-component",
   template: "#works-slider-container",
   components: {
     display, info
   },
-  data () {
+  data() {
     return {
       works: [],
-      currentWork: {},
       currentIndex: 0
+    }
+  },
+  watch: {
+    currentIndex(value) {
+      const worksLenghtFromZero = this.works.length - 1;
+      if (value < 0) this.currentIndex = 0;
+      if (value > worksLenghtFromZero) this.currentIndex = worksLenghtFromZero;
+      
+    }
+  },
+  computed: {
+    currentWork() {
+      return this.works[this.currentIndex];
     }
   },
   methods: {
@@ -61,14 +88,24 @@ new Vue ({
         return item
       })
     },
+
     handleSlide(direction) {
-      console.log(direction);
-      
+      switch (direction) {
+        case 'next':
+          this.currentIndex++;
+          break;
+        case 'prev':
+          this.currentIndex--;
+          break;
+      }
+    },
+    chooseSlide(index) {
+      this.currentIndex = index
+      console.log(index)
     }
   },
   created() {
     const data = require('../data/works.json');
     this.works = this.addArrWithReqImgs(data);
-    this.currentWork = this.works[this.currentIndex];
   }
 });
