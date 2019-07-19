@@ -3,8 +3,9 @@
   background-size: cover;
   background-position: center;
   clip-path: polygon(0% 0%, 0% 100%, 100% 100%, 100% 0%, 50% 100px);
+  
   @include tablets {
-  clip-path: polygon(0% 0%, 0% 100%, 100% 100%, 100% 0%, 50% 50px);
+    clip-path: polygon(0% 0%, 0% 100%, 100% 100%, 100% 0%, 50% 50px);
   
   }
 }
@@ -17,17 +18,20 @@
 .reviews__title-row {
   display: flex;
   margin-bottom: 100px;
+  
   @include phones {
     flex-direction: column;
     align-items: center;
+  
   } 
 }
 
 .reviews__title {
   margin-right: 100px;
+  
   @include phones {
-  margin-right: 0px;
-  margin-bottom: 20px;
+    margin-right: 0;
+    margin-bottom: 20px;
 
   }
 }
@@ -41,16 +45,16 @@
   height: 50px;
   border: solid 1px $dark-grey-blue;
   border-radius: 100%;
-  transition: border-color .3s;
+  transition: border-color 0.3s;
   margin-right: 30px;
 
   &:hover {
     border-color: $blue-purple;
-    transition: border-color .3s;
+    transition: border-color 0.3s;
 
     .reviews__btn-arrow {
       fill: $blue-purple;
-      transition: fill .3s;
+      transition: fill 0.3s;
     }
   }
 }
@@ -63,15 +67,16 @@
 
 .reviews__btn--prev {
   transform: rotate(180deg);
-  transition: fill .3s;
+  transition: fill 0.3s;
 }
 
 .reviews__slider {
   display: flex;
   width: 80%;
   justify-content: space-between;
+  
   @include tablets {
-  width: 100%;
+    width: 100%;
 
   }
 }
@@ -86,15 +91,18 @@
     min-width: 70px;
     min-height: 60px;
     margin-right: 20px;
-    background: svg-load('quote.svg', fill=$slate-10, width=100%, height=100%);
+    background: svg-load("quote.svg", fill=$slate-10, width=100%, height=100%);
     background-repeat: no-repeat;
+    
     @include tablets {
       display: none;
     }
+    
     @include phones {
       display: block;
     }
   }
+  
   @include phones {
     width: 100%;
   }
@@ -104,8 +112,9 @@
   display: flex;
   flex-direction: column;
   width: 63%;
+  
   @include tablets {
-  width: 75%;
+    width: 75%;
 
   }
 }

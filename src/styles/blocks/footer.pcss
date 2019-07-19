@@ -38,8 +38,9 @@
   @include desktopHd {
     margin-left: 40px;
   }
+  
   @include desktop {
-    margin-left: 0px;
+    margin-left: 0;
   }
 }
 
@@ -57,6 +58,7 @@
   width: 100px;
   line-height: 1.67;
   margin-bottom: 20px;
+  
   @include phones {
     width: 100%;
   }
@@ -66,6 +68,7 @@
   line-height: 1.88;
   color: $white-15;
   width: 140px;
+  
   @include phones {
     width: 100%;
   }
@@ -98,6 +101,7 @@
       width: 25%;
       margin-bottom: 30px;
     }
+    
     @include phones {
       width: 50%;
     }
@@ -121,7 +125,7 @@
     margin-bottom: 50px;
 
     &:last-child {
-      margin-bottom: 0px;
+      margin-bottom: 0;
 
     }
   }
@@ -141,16 +145,16 @@
     border-radius: 100%;
     align-items: center;
     justify-content: center;
-    transition: border-color .3s;
+    transition: border-color 0.3s;
     cursor: pointer;
 
     &:hover {
       border-color: $blue-purple;
-      transition: border-color .3s;
+      transition: border-color 0.3s;
 
       .socials__link {
         fill: $blue-purple;
-        transition: fill .3s;
+        transition: fill 0.3s;
       }
 
     }

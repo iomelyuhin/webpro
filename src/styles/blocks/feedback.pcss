@@ -4,6 +4,7 @@
 
 .feedback__title {
   margin-bottom: 90px;
+  
   @include tablets {
     margin-bottom: 50px;
     text-align: center;
@@ -13,6 +14,7 @@
 .feedback__form-cont {
   width: 60%;
   margin-bottom: 60px;
+  
   @include tablets {
     width: 100%;
     margin-bottom: 20px;
@@ -22,6 +24,7 @@
 .feedback__form-row {
   display: flex;
   margin-bottom: 35px;
+  
   @include phones {
     flex-direction: column;
   }
@@ -34,11 +37,13 @@
   position: relative;
 
   &:last-child {
-    margin-right: 0px;
+    margin-right: 0;
+    
     @include phones {
-      margin-bottom: 0px;
+      margin-bottom: 0;
     }
   }
+  
   @include phones {
     margin-bottom: 35px;
   }
@@ -53,7 +58,7 @@
 
 .feedback__form-enter {
   width: 100%;
-  padding: 19px 0px 19px 46px;
+  padding: 19px 0 19px 46px;
   position: relative;
   background-color: transparent;
   outline: none;
@@ -99,21 +104,18 @@
 
 .feedback__form-btn {
   padding: 34px 120px;
-  //background-image: linear-gradient(to right, $vibrant-purple, $blue-purple);
   font-size: 18px;
   font-weight: bold;
   color: $white;
   text-transform: uppercase;
   border-top-left-radius: 40px;
-  transition: background-image .3s;
   border-bottom-right-radius: 40px;
   background: linear-gradient(to left, $blue-purple, transparent 70%);
   background-color: $vibrant-purple;
-  transition: background-color .4s;
+  transition: background-color 0.4s;
   &:hover {
-  //background: linear-gradient(to left, $blue-purple, transparent 0%);
-  background-color: $blue-purple;
-  transition: background-color .4s;
+    background-color: $blue-purple;
+    transition: background-color 0.4s;
     
   }
 }

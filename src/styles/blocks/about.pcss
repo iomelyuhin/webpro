@@ -8,6 +8,7 @@
 .container--about {
   display: flex;
   justify-content: center;
+
   @include phones {
     flex-direction: column;
   }
@@ -16,10 +17,12 @@
 .about__profile {
   width: 30%;
   margin-right: 100px;
+  
   @include tablets {
     width: 48%;
-    margin-right: 0px;
+    margin-right: 0;
   }
+  
   @include phones {
     width: 100%;
     margin-bottom: 40px;
@@ -30,6 +33,7 @@
   display: flex;
   justify-content: center;
   margin-bottom: 80px;
+  
   @include tablets {
     justify-content: flex-start;
 
@@ -74,9 +78,11 @@
 
 .about__content {
   width: 43%;
+  
   @include tablets {
     width: 53%;
   }
+  
   @include phones {
     width: 100%;
     margin-bottom: 100px;
@@ -107,6 +113,7 @@
   font-size: 16px;
   line-height: 1.88;
   margin-bottom: 85px;
+  
   @include phones {
     margin-bottom: 40px;
     

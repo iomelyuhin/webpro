@@ -1,11 +1,11 @@
 mixin nav(mod, items, activeItem)
-  - var items = ["Главная", "Обо мне", "Навыки", "Работы", "Отзывы", "Связаться"]
+  - var items = [{name:"Главная", link: "#"}, {name: "Обо мне", link: "#about"}, {name: "Навыки", link: "#skills"}, {name: "Работы", link: "#works"}, {name: "Отзывы", link: "#reviews"}, {name: "Связаться", link: "#feedback"}]
 
   nav(class=`navigation navigation--${mod} ${activeItem}`) 
     ul(class=`navigation__list`)
       each item in items
         li(class=`navigation__item`) 
-          a(href="#" class=`navigation__link`)= item
+          a(href=`${item.link}` class=`navigation__link`)= item.name
 
 +nav('header', items ,'')
   

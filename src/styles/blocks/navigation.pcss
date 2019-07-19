@@ -7,11 +7,11 @@
 .navigation__link {
   display: block;
   color: $slate;
-  transition: color .3s;
+  transition: color 0.3s;
 
   &:hover {
     color: $slate-50;
-    transition: color .3s;
+    transition: color 0.3s;
   }
 }
 
@@ -21,12 +21,10 @@
     top: 0;
     right: -100%;
     background-color: #fff;
-    transition: background .4s;
     height: 100vh;
-    display: flex;
     width: 40%;
     align-items: center;
-    transition: right .3s;
+    transition: right 0.3s;
     display: none;
   }
   
@@ -34,8 +32,9 @@
     @include tablets {
       display: flex;
       right: 0;
-      transition: right .3s;
+      transition: right 0.3s;
     }
+
     @include phones {
       display: flex;
       width: 100%;
@@ -49,6 +48,7 @@
       padding-left: 80px;
       font-weight: bold;
     }
+    
     @include phones {
       font-size: 22Px;
       text-align: center;

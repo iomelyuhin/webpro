@@ -8,9 +8,11 @@
 
 .utility__title {
   margin-bottom: 60px;
+  
   @include tablets {
     text-align: center;
   }
+  
   @include phones {
     text-align: center;
     width: 80%;
@@ -21,15 +23,16 @@
 
 .utility__text {
   max-width: 70%;
-  font-weight: 600;
   line-height: 1.88;
   margin-bottom: 90px;
   font-weight: 600;
+
   @include tablets {
     text-align: center;
     align-self: center;
   }
-  @include phones{
+
+  @include phones {
     text-align: left;
     max-width: 80%;
     left: 50%;
@@ -38,10 +41,12 @@
 
 .container--utility {
   display: flex;
+  
   @include tablets {
     flex-direction: column-reverse;
     align-items: center;
   }
+  
   @include phones {
     width: 100%;
   }
@@ -56,6 +61,7 @@
 
 .utility__pic {
   max-width: 400px;
+  
   @include tablets {
     max-width: 185px;
 
@@ -75,6 +81,7 @@
 
 .utility__infograms {
   margin-left: 90px;
+  
   @include tablets {
     margin-left: 0;
   }
@@ -85,6 +92,7 @@
   font-weight: bold;
   color: $slate;
   margin-bottom: 40px;
+  
   @include tablets {
     text-align: center;
   }
@@ -114,6 +122,7 @@
   align-items: center;
   font-size: 18px;
   font-weight: bold;
+
   @include phones {
     margin-bottom: 20px;
   }
@@ -122,7 +131,6 @@
 .percentage {
   width: 154Px;
   height: 154Px;
-  //transform: rotate(-180deg);
   position: absolute;
 }
 
