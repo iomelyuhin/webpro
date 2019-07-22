@@ -1,215 +1,45 @@
 <template lang="pug">
   .maincontent
-      header.header
-        .container.container--header
-          .header__content-wrap
-            .header__avatar-wrap
-              img(src="../images/content/user.jpg").header__avatar
-            h1.header__title Омелюхин Илья
-            h2.header__subtitile Панель администрирования
-          a(herf="#").header__logout Выйти
-      .container
-        nav.nav
-          ul.nav__list
-            li.nav-list__item
-              a(href="#").nav-list__item-link Обо мне
-            li.nav-list__item
-              a(href="#").nav-list__item-link Работы
-            li.nav-list__item
-              a(href="#").nav-list__item-link Отзывы
-      section.about
-        .container
-          .about__row
-            h3.about__title Блок "Обо мне"
-            button(type="button").btn-add.btn-add--group +
-          .about-grid
-            form.about-grid__item
-              .about-grid__item-upper-row
-                input(type="text" placeholder="Название новой группы").about-grid__item-group-name
-                .about-grid__item-btns-wrap
-                  button(type="button").about-grid__item-ok
-                  button(type="button").about-grid__item-deny
-              ul.about-grid__item-skills-list
-              .about-grid__item-lower-row
-                input(type="text" placeholder="Новый навык").about-grid__item-skill-name
-                input(type="text" value="100%").about-grid__item-skill-value
-                button(type="button").btn-add.btn-add--skill +
-            form.about-grid__item
-              .about-grid__item-upper-row
-                input(type="text" value="Workflow").about-grid__item-group-name
-                .about-grid__item-btns-wrap
-                  button(type="button").about-grid__item-ok
-                  button(type="button").about-grid__item-deny
-              ul.about-grid__item-skills-list
-                li.about-grid__item-skills-list-row
-                  input(type="text" value="Git").about-grid__item-list-skill
-                  input(type="text" value="100%").about-grid__item-list-value
-                  .about-grid__item-btns-wrap
-                    button(type="button").about-grid__item-edit
-                    button(type="button").about-grid__item-del
-                li.about-grid__item-skills-list-row
-                  input(type="text" value="Terminal").about-grid__item-list-skill
-                  input(type="text" value="50%").about-grid__item-list-value
-                  .about-grid__item-btns-wrap
-                    button(type="button").about-grid__item-edit
-                    button(type="button").about-grid__item-del
-                li.about-grid__item-skills-list-row
-                  input(type="text" value="Gulp").about-grid__item-list-skill
-                  input(type="text" value="60%").about-grid__item-list-value
-                  .about-grid__item-btns-wrap
-                    button(type="button").about-grid__item-edit
-                    button(type="button").about-grid__item-del
-                li.about-grid__item-skills-list-row
-                  input(type="text" value="Webpack").about-grid__item-list-skill
-                  input(type="text" value="30%").about-grid__item-list-value
-                  .about-grid__item-btns-wrap
-                    button(type="button").about-grid__item-edit
-                    button(type="button").about-grid__item-del
-              .about-grid__item-lower-row
-                input(type="text" placeholder="Новый навык").about-grid__item-skill-name
-                input(type="text" value="100%").about-grid__item-skill-value
-                button(type="button").btn-add.btn-add--skill +
-            form.about-grid__item
-              .about-grid__item-upper-row
-                input(type="text" value="Frontend").about-grid__item-group-name
-                .about-grid__item-btns-wrap
-                  button(type="button").about-grid__item-ok
-                  button(type="button").about-grid__item-edit
-              ul.about-grid__item-skills-list
-                li.about-grid__item-skills-list-row
-                  input(type="text" value="HTML5").about-grid__item-list-skill
-                  input(type="text" value="100%").about-grid__item-list-value
-                  .about-grid__item-btns-wrap
-                    button(type="button").about-grid__item-edit
-                    button(type="button").about-grid__item-del
-                li.about-grid__item-skills-list-row
-                  input(type="text" value="CSS3").about-grid__item-list-skill
-                  input(type="text" value="50%").about-grid__item-list-value
-                  .about-grid__item-btns-wrap
-                    button(type="button").about-grid__item-edit
-                    button(type="button").about-grid__item-del
-                li.about-grid__item-skills-list-row
-                  input(type="text" value="JavaScript").about-grid__item-list-skill
-                  input(type="text" value="60%").about-grid__item-list-value
-                  .about-grid__item-btns-wrap
-                    button(type="button").about-grid__item-edit
-                    button(type="button").about-grid__item-del
-                li.about-grid__item-skills-list-row
-                  input(type="text" value="Vue.js").about-grid__item-list-skill
-                  input(type="text" value="30%").about-grid__item-list-value
-                  .about-grid__item-btns-wrap
-                    button(type="button").about-grid__item-edit
-                    button(type="button").about-grid__item-del
-              .about-grid__item-lower-row
-                input(type="text" placeholder="Новый навык").about-grid__item-skill-name
-                input(type="text" value="100%").about-grid__item-skill-value
-                button(type="button").btn-add.btn-add--skill +
-      section.projects
-        .container
-          h3.projects__title Блок «Работы»
-          .projects__item
-            .projects__item-row
-              h4.projects__item-title Редактирование работы
-            .pojects__item-edit
-              .pojects__item-photo
-                .projects__item-photo-text Перетащите или загрузите для загрузки изображения
-                button(type="button").pojects__item-photo-upload Загрузить
-              form.projects__item-content
-                label.projects__item-content-label
-                  .projects__item-content-label-title Название
-                  input(type="text").projects__item-content-input
-                label.projects__item-content-label Ссылка
-                  .projects__item-content-label-title
-                  input(type="text").projects__item-content-input
-                label.projects__item-content-label Описание
-                  .projects__item-content-label-title
-                  textarea(name="projectContent", cols="30", rows="10").projects__item-content-textarea
-                label.projects__item-content-label
-                  .projects__item-content-label-title Добавление тэга
-                  input(type="text").projects__item-content-input
-                ul.projects__item-content-tags
-                  li.projects__item-content-tags-item HTML
-                    button(type="button").projects__item-content-tags-item-del
-                  li.projects__item-content-tags-item CSS
-                    button(type="button").projects__item-content-tags-item-del
-                  li.projects__item-content-tags-item JavaScript
-                    button(type="button").projects__item-content-tags-item-del
-                .projects__item-content-btn-wrap
-                  button(type="button").projects__item-content-btn-decline Отмена
-                  button(type="button").projects__item-content-btn-save Загрузить
-          ul.projects__grid
-            li.projects__grid-add
-              button(type="button").add-btn
-                .add-circle +
-                .add-title Добавить работу
-            li.projects__grid-item
-              img(src="../images/content/work-01.jpg").projects__grid-item-photo
-              .projects__grid-item-content
-                .projects__grid-item-title Сайт школы образования
-                .projects__grid-item-descr Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
-                a.projects__grid-item-link http://loftschool.ru
-                .projects__grid-item-controls
-                  .controls-wrap
-                    button(type="button").controls-edit Править
-                  .projects__grid-item-controls-wrap
-                    button(type="button").controls-del Удалить
-      section.feedback
-        .container
-          .feedback__title Блок "Отзывы"
-          .feedback__item-edit
-            .feedback__item-edit-row Новый отзыв
-            form.feedback__item-edit-content
-              .feedback__item-edit-photo
-                .feedback__item-edit-avatar
-                button(type="button").feedback__item-edit-avatar-add Добавить фото
-              label.feedback__item-edit-label
-                .feedback__item-edit-label-title Имя автора
-                input(type="text").feedback__item-edit-input
-              label.feedback__item-edit-label
-                .feedback__item-edit-label-title Титул автора
-                input(type="text").feedback__item-edit-input
-              label.feedback__item-edit-descr
-                .feedback__item-edit-label-title Отзыв
-                textarea(name="feedback").feedback__item-edit-textarea
-            .feedback__item-edit-btn-wrap
-              button(type="button").feedback__item-edit-btn-cancel Отмена
-              button(type="button").feedback__item-edit-btn-save Загрузить
-          ul.feedback__grid
-            li.feedback__grid-add
-              button(type="button").add-btn
-                .add-circle +
-                .add-title Добавить работу
-            li.feedback__grid-item
-              .feedback__grid-item-row
-                .feedback__grid-item-avatar
-                  img(src="../images/content/author-01.jpg")
-                .feedback__grid-item-title-wrap
-                  .feedback__grid-item-title Владимир Сабанцев
-                  .feedback__grid-item-subtitle Преподаватель
-              .feedback__grid-item-descr Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах
-              .feedback__grid-item-controls
-                  .controls-wrap
-                    button(type="button").controls-edit Править
-                  .projects__grid-item-controls-wrap
-                    button(type="button").controls-del Удалить
-      section.login
-        form.login__card
-          h3.login__title Авторизация
-           .login__row 
-            label.login__label
-              .login__label-title Логин
-              input.login__input
-          .login__row.login__row-pass 
-            label.login__label
-              .login__label-title Пароль
-              input.login__input
-          button(type="submit").login__button Войти
+    appHeader
+    appNav
+    about 
+    projects  
+    feedback
+    login
+      
 </template>
+
+<script>
+  import appHeader from './components/appHeader';
+  import appNav from './components/appNav';
+  import about from './components/about';
+  import projects from './components/projects';
+  import feedback from './components/feedback';
+  import login from './components/login';
+
+  export default {
+    name: 'App',
+    components: {
+      appHeader,
+      appNav,
+      about,
+      projects,
+      feedback,
+      login
+    },
+    data() {
+      return {
+        msg: 'Hello!'
+      }
+    }
+  }
+</script>
 
 <style lang="pcss">
 @import "normalize.css";
 @import url('../styles/mixins');
 @import url('../styles/layout/base');
+@import url('../styles/main');
 .container {
   max-width: 1200px;
 }
@@ -487,9 +317,9 @@
   text-align: center;
 }
 .pojects__item-photo-upload {
-  width: 181px;
-  height: 50px;
+  padding: 20px 20px;
   margin-top: 20px;
+  line-height: 0;
   font-size: 16px;
   font-weight: 700;
   color: #fff;
