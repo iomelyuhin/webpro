@@ -9,3 +9,4 @@ import "./scripts/reviews";
 import "./scripts/parallax";
 import "./scripts/humburgermenu";
 import "./scripts/anchorlink";
+import "./admin/main.js";

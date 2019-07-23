@@ -9,7 +9,7 @@ const TerserPlugin = require("terser-webpack-plugin");
 
 module.exports = (env, argv) => {
   const isProductionBuild = argv.mode === "production";
-  const publicPath = './';
+  const buildDir = './docs';
 
   const pcss = {
     test: /\.(p|post|)css$/,
@@ -82,18 +82,8 @@ module.exports = (env, argv) => {
       }
     ]
   };
-
+  
   const config = {
-    entry: {
-      main: "./src/main.js",
-      admin: "./src/admin/main.js"
-    },
-    output: {
-      path: path.resolve(__dirname, "./dist"),
-      filename: "[name].[hash].build.js",
-      publicPath: isProductionBuild ? publicPath : "",
-      chunkFilename: "[chunkhash].js"
-    },
     module: {
       rules: [pcss, vue, js, files, svg, pug]
     },
@@ -154,5 +144,45 @@ module.exports = (env, argv) => {
     ];
   }
 
-  return config;
+  const mainConfig = {
+    ...config,
+    name: "main-config",
+    entry: {
+      main: "./src/main.js"
+    },
+    output: {
+      filename: "[name].build.js",
+      chunkFilename: "[chunkhash].js",
+      path: path.resolve(__dirname, `${buildDir}`)
+    },
+    plugins: [
+      new HtmlWebpackPlugin({
+        template: "src/index.pug"
+      }),
+      ...config.plugins
+    ]
+  };
+
+  const adminConfig = {
+    ...config,
+    name: "admin-config",
+    entry: {
+      admin: "./src/admin/main.js"
+    },
+    output: {
+      publicPath: isProductionBuild ? "" : "./admin/",
+      filename: "[name].build.js",
+      chunkFilename: "[chunkhash].js",
+      path: path.resolve(__dirname, `${buildDir}/admin`)
+    },
+    plugins: [
+      ...config.plugins,
+      new HtmlWebpackPlugin({
+        template: "src/admin/index.pug"
+      })
+    ]
+  };
+
+
+  return [mainConfig, adminConfig];
 };
