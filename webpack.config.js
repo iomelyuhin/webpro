@@ -153,7 +153,7 @@ module.exports = (env, argv) => {
     output: {
       filename: "[name].build.js",
       chunkFilename: "[chunkhash].js",
-      path: path.resolve(__dirname, "./dist")
+      path: path.resolve(__dirname, `${buildDir}`)
     },
     plugins: [
       new HtmlWebpackPlugin({
@@ -173,7 +173,7 @@ module.exports = (env, argv) => {
       publicPath: isProductionBuild ? "" : "./admin/",
       filename: "[name].build.js",
       chunkFilename: "[chunkhash].js",
-      path: path.resolve(__dirname, "./dist/admin")
+      path: path.resolve(__dirname, `${buildDir}/admin`)
     },
     plugins: [
       ...config.plugins,

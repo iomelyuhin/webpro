@@ -1,11 +1,11 @@
 <template lang="pug">
-  nav.nav
+  nav.nav-adm
     .container
-      ul.nav__list
-        li.nav-list__item
-          a(href="#").nav-list__item-link Обо мне
-        li.nav-list__item
-          a(href="#").nav-list__item-link Работы
-        li.nav-list__item
-          a(href="#").nav-list__item-link Отзывы
+      ul.nav-adm__list
+        li.nav-adm-list__item
+          a(href="#").nav-adm-list__item-link Обо мне
+        li.nav-adm-list__item
+          a(href="#").nav-adm-list__item-link Работы
+        li.nav-adm-list__item
+          a(href="#").nav-adm-list__item-link Отзывы
 </template>

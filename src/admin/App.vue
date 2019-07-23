@@ -43,56 +43,56 @@
 .container {
   max-width: 1200px;
 }
-.container--header {
+.container--header-adm {
   height: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.header {
+.header-adm {
   width: 100%;
   height: 80px;
   background-image: linear-gradient(to right, #3e3e59 0%, #454573 100%);
   color: #fff;
 }
-.header__content-wrap {
+.header-adm__content-wrap {
   display: flex;
   align-items: center;
 }
-.header__avatar-wrap {
+.header-adm__avatar-wrap {
   width: 45px;
   height: 45px;
 }
-.header__avatar {
+.header-adm__avatar {
   object-fit: cover;
   border-radius: 50%;
 }
-.header__title {
+.header-adm__title {
   margin-left: 20px;
   font-size: 18px;
   font-weight: 400;
 }
-.header__subtitile {
+.header-adm__subtitile {
   margin-left: 20px;
   color: #808097;
   font-size: 14px;
   font-weight: 400;
 }
-.header__logout {
+.header-adm__logout {
   color: #808097;
   font-size: 16px;
   font-weight: 400;
   text-decoration: underline;
 }
-.nav {
+.nav-adm {
   height: 80px;
   color: #383bcf;
 }
-.nav__list {
+.nav-adm__list {
   height: 80px;
   display: flex;
 }
-.nav-list__item {
+.nav-adm-list__item {
   padding: 0 20px;
   height: 100%;
   display: flex;
@@ -103,21 +103,21 @@
       cursor: pointer;
     }
 }
-.nav-list__item-link {
+.nav-adm-list__item-link {
   color: inherit;
   text-decoration: inherit;
 }
-.about {
+.about-adm {
   padding-top: 60px;
   padding-bottom: 30px;
   background-color: #f8f9fe;
 }
-.about__row {
+.about-adm__row {
   width: 100%;
   display: flex;
   align-items: center;
 }
-.about__title {
+.about-adm__title {
   font-size: 21px;
   font-weight: 700;
 }
@@ -141,13 +141,13 @@
       color: #383bcf;
     }
 }
-.about__add-skill-group-text {
+.about-adm__add-skill-group-text {
   margin-left: 15px;
   color: #3f35cb;
   font-size: 16px;
   font-weight: 700;
 }
-.about-grid {
+.about-adm-grid {
   margin-top: 60px;
   width: 100%;
   display: grid;
@@ -158,7 +158,7 @@
     grid-template-columns: 1fr;
   }
 }
-.about-grid__item {
+.about-adm-grid__item {
   width: 100%;
   padding-top: 10px;
   padding-left: 25px;
@@ -167,7 +167,7 @@
   box-shadow: 4px 3px 20px rgba(0, 0, 0, 0.07);
   background-color: #fff;
 }
-.about-grid__item-upper-row {
+.about-adm-grid__item-upper-row {
   height: 55px;
   width: 100%;
   display: flex;
@@ -175,7 +175,7 @@
   align-items: center;
   border-bottom: 1px solid #C0C0C0;
 }
-.about-grid__item-group-name {
+.about-adm-grid__item-group-name {
   height: 40px;
   width: 60%;
   outline: none;
@@ -183,7 +183,7 @@
       border-bottom: 1px solid #000;
     }
 }
-.about-grid__item-ok {
+.about-adm-grid__item-ok {
   width: 20px;
   height: 20px;
   background: svg-load(
@@ -193,7 +193,7 @@
           height=12px
         ) center no-repeat;
 }
-.about-grid__item-deny {
+.about-adm-grid__item-deny {
   width: 20px;
   height: 20px;
   margin-left: 10px;
@@ -204,26 +204,26 @@
           height=12px
         ) center no-repeat;
 }
-.about-grid__item-skills-list {
+.about-adm-grid__item-skills-list {
   min-height: 200px;
   padding-top: 20px;
 }
-.about-grid__item-skills-list-row {
+.about-adm-grid__item-skills-list-row {
   display: flex;
   justify-content: space-between;
   margin-top: 10px;
 }
-.about-grid__item-list-skill {
+.about-adm-grid__item-list-skill {
   width: 60%;
   
   @include tablets {
     width: 50%;
   }
 }
-.about-grid__item-list-value {
+.about-adm-grid__item-list-value {
   width: 20%;
 }
-.about-grid__item-edit {
+.about-adm-grid__item-edit {
   width: 20px;
   height: 20px;
   margin-left: 10px;
@@ -234,7 +234,7 @@
           height=12px
         ) center no-repeat;
 }
-.about-grid__item-del {
+.about-adm-grid__item-del {
   width: 20px;
   height: 20px;
   margin-left: 10px;
@@ -245,18 +245,18 @@
           height=12px
         ) center no-repeat;
 }
-.about-grid__item-lower-row {
+.about-adm-grid__item-lower-row {
   display: flex;
   justify-content: flex-end;
 }
-.about-grid__item-skill-name {
+.about-adm-grid__item-skill-name {
   height: 40px;
   width: 40%;
   padding-left: 10px;
   outline: none;
   border-bottom: 1px solid #000;
 }
-.about-grid__item-skill-value {
+.about-adm-grid__item-skill-value {
   height: 40px;
   width: 20%;
   padding-left: 10px;
