@@ -35,7 +35,7 @@
   }
 </script>
 
-<style lang="pcss">
+<style lang="pcss" scope>
 @import "normalize.css";
 @import url('../styles/mixins');
 @import url('../styles/layout/base');
