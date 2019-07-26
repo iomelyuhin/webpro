@@ -1,7 +1,15 @@
 <template lang='pug'>
   .about-adm-grid__item-lower-row
-    input(type="text" placeholder="Новый навык").about-adm-grid__item-skill-name
-    input(type="text" value="100%").about-adm-grid__item-skill-value
+    input(
+      v-model="skill.title"
+      type="text" 
+      placeholder="Новый навык"
+    ).about-adm-grid__item-skill-name
+    input(
+      v-model="skill.percent"
+      type="text" 
+      value="100%"
+    ).about-adm-grid__item-skill-value
     button(type="button"
     @click="addNewSkill").btn-add.btn-add--skill +
 </template>
@@ -9,10 +17,26 @@
 <script>
   import { mapActions } from "vuex";
   export default {
+    data() {
+      return {
+        skill: {
+          title: "",
+          percent: "",
+          category: "?"
+        }
+      }
+    },
     methods: {
       ...mapActions('skills', ['addSkill']),
+      //async 
       addNewSkill() {
-        this.addSkill()
+        this.addSkill(this.skill)
+        //try {
+        //  await this.addSkill(this.skill)
+
+        //} catch (error) {
+        //  alert (error.message);
+        //}
       } 
     }
   }

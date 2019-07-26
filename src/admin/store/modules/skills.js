@@ -4,8 +4,8 @@ export default {
     skills: []
   },
   actions: {
-    addSkill() {
-      console.log('action');
+    addSkill(store, newSkill) {
+      this.$axios.post('/skills', newSkill)
     }
     
   }
