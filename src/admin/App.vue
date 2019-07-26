@@ -2,10 +2,7 @@
   .maincontent
     appHeader
     appNav
-    about 
-    projects  
-    feedback
-    login
+    router-view
       
 </template>
 
@@ -681,12 +678,14 @@
   justify-content: space-between;
 }
 .login {
-  width: 100%;
-  height: 100%;
-  padding: 30px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   background-color: #f8f9fe;
 }
 .login__card {

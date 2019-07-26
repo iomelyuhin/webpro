@@ -3,9 +3,15 @@
     .container
       ul.nav-adm__list
         li.nav-adm-list__item
-          a(href="#").nav-adm-list__item-link Обо мне
+          router-link(
+            to="/"
+          ).nav-adm-list__item-link Обо мне
         li.nav-adm-list__item
-          a(href="#").nav-adm-list__item-link Работы
+          router-link(
+            to="/projects"
+          ).nav-adm-list__item-link Работы
         li.nav-adm-list__item
-          a(href="#").nav-adm-list__item-link Отзывы
+          router-link(
+            to="/feedback"
+          ).nav-adm-list__item-link Отзывы
 </template>
