@@ -38,7 +38,7 @@
             .add-circle +
             .add-title Добавить работу
         li.projects__grid-item
-          img(src="../../images/content/work-01.jpg").projects__grid-item-photo
+          img(src="../../../images/content/work-01.jpg").projects__grid-item-photo
           .projects__grid-item-content
             .projects__grid-item-title Сайт школы образования
             .projects__grid-item-descr Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
@@ -49,3 +49,13 @@
               .projects__grid-item-controls-wrap
                 button(type="button").controls-del Удалить
 </template>
+
+<script>
+export default {
+  
+}
+</script>
+
+<style lang="postcss" scoped>
+
+</style>

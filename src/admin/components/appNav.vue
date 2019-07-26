@@ -15,3 +15,13 @@
             to="/feedback"
           ).nav-adm-list__item-link Отзывы
 </template>
+
+<script>
+export default {
+  
+}
+</script>
+
+<style lang="postcss" scoped>
+
+</style>

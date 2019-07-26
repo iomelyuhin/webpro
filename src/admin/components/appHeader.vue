@@ -8,3 +8,13 @@
         h2.header-adm__subtitile Панель администрирования
       a(herf="#").header-adm__logout Выйти
 </template>
+
+<script>
+export default {
+  
+}
+</script>
+
+<style lang="postcss" scoped>
+
+</style>

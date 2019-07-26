@@ -87,3 +87,13 @@
             input(type="text" value="100%").about-adm-grid__item-skill-value
             button(type="button").btn-add.btn-add--skill +
 </template>
+
+<script>
+export default {
+  
+}
+</script>
+
+<style lang="postcss" scoped>
+
+</style>

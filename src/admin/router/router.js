@@ -3,27 +3,39 @@ import VueRouter from 'vue-router';
 
 Vue.use(VueRouter);
 
-import about from '../components/about.vue'
-import projects from '../components/projects.vue'
-import feedback from '../components/feedback.vue'
-import login from '../components/login.vue'
+import about from '../components/pages/about.vue'
+import projects from '../components/pages/projects.vue'
+import feedback from '../components/pages/feedback.vue'
+import login from '../components/pages/login.vue'
 
 const routes = [
   {
     path: "/",
-    component: about
+    component: about,
+    meta: {
+      title: "Блок «Обо мне»"
+    }
   },
   {
     path: "/projects",
-    component: projects
+    component: projects,
+    meta: {
+      title: "Блок «Работы»"
+    }
   },
   {
     path: "/feedback",
-    component: feedback
+    component: feedback,
+    meta: {
+      title: "Блок «Отзывы»"
+    }
   },
   {
     path: "/login",
-    component: login
+    component: login,
+    meta: {
+      public: true
+    }
   }
 ];
 

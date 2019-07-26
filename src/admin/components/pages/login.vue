@@ -12,3 +12,13 @@
           input.login__input
       button(type="submit").login__button Войти
 </template>
+
+<script>
+export default {
+  
+}
+</script>
+
+<style lang="postcss" scoped>
+
+</style>

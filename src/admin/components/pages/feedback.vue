@@ -28,7 +28,7 @@
         li.feedback__grid-item
           .feedback__grid-item-row
             .feedback__grid-item-avatar
-              img(src="../../images/content/author-01.jpg")
+              img(src="../../../images/content/author-01.jpg")
             .feedback__grid-item-title-wrap
               .feedback__grid-item-title Владимир Сабанцев
               .feedback__grid-item-subtitle Преподаватель
@@ -39,3 +39,13 @@
               .projects__grid-item-controls-wrap
                 button(type="button").controls-del Удалить
 </template>
+
+<script>
+export default {
+  
+}
+</script>
+
+<style lang="postcss" scoped>
+
+</style>
