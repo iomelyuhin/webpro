@@ -7,7 +7,8 @@
 </template>
 
 <script>
+  import { mapActions, mapState } from "vuex";
   export default {
-
+    
   }
 </script>

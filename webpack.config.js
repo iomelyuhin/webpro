@@ -6,10 +6,13 @@ const VueLoaderPlugin = require("vue-loader/lib/plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const Dotenv = require('dotenv-webpack');
+
 
 module.exports = (env, argv) => {
   const isProductionBuild = argv.mode === "production";
-  const buildDir = './docs';
+  const buildDir = "./docs";
 
   const pcss = {
     test: /\.(p|post|)css$/,
@@ -30,7 +33,6 @@ module.exports = (env, argv) => {
     loader: "babel-loader",
     exclude: /node_modules/,
     options: {
-      presets: ['@babel/preset-env'],
       plugins: ["@babel/plugin-syntax-dynamic-import"]
     }
   };
@@ -82,37 +84,30 @@ module.exports = (env, argv) => {
       }
     ]
   };
-  
-  const config = {
+
+  const configTemplate = {
     module: {
       rules: [pcss, vue, js, files, svg, pug]
     },
     resolve: {
       alias: {
         vue$: "vue/dist/vue.esm.js",
-        images: path.resolve(__dirname, "src/images")
+        images: path.resolve(__dirname, "src/images"),
+        components: path.resolve(__dirname, "src/admin/components"),
+        "@": path.resolve(__dirname, "src/admin")
       },
       extensions: ["*", ".js", ".vue", ".json"]
     },
     devServer: {
       historyApiFallback: true,
       noInfo: false,
-      overlay: true,
-      clientLogLevel: 'info'
+      overlay: true
     },
     performance: {
       hints: false
     },
     plugins: [
-      new HtmlWebpackPlugin({
-        template: "src/index.pug",
-        chunks: ["main"]
-      }),
-      new HtmlWebpackPlugin({
-        template: "src/admin/index.pug",
-        filename: "admin/index.html",
-        chunks: ["admin"]
-      }),
+      new Dotenv(),
       new SpriteLoaderPlugin({ plainSprite: true }),
       new VueLoaderPlugin()
     ],
@@ -120,8 +115,8 @@ module.exports = (env, argv) => {
   };
 
   if (isProductionBuild) {
-    config.devtool = "none";
-    config.plugins = (config.plugins || []).concat([
+    configTemplate.devtool = "none";
+    configTemplate.plugins = (configTemplate.plugins || []).concat([
       new webpack.DefinePlugin({
         "process.env": {
           NODE_ENV: '"production"'
@@ -133,9 +128,9 @@ module.exports = (env, argv) => {
       })
     ]);
 
-    config.optimization = {};
+    configTemplate.optimization = {};
 
-    config.optimization.minimizer = [
+    configTemplate.optimization.minimizer = [
       new TerserPlugin({
         cache: true,
         parallel: true,
@@ -146,10 +141,10 @@ module.exports = (env, argv) => {
   }
 
   const mainConfig = {
-    ...config,
+    ...configTemplate,
     name: "main-config",
     entry: {
-      main: "./src/main.js"
+      main: ["@babel/polyfill", "./src/main.js"]
     },
     output: {
       filename: "[name].build.js",
@@ -160,15 +155,15 @@ module.exports = (env, argv) => {
       new HtmlWebpackPlugin({
         template: "src/index.pug"
       }),
-      ...config.plugins
+      ...configTemplate.plugins
     ]
   };
 
   const adminConfig = {
-    ...config,
+    ...configTemplate,
     name: "admin-config",
     entry: {
-      admin: "./src/admin/main.js"
+      admin: ["@babel/polyfill", "./src/admin/main.js"]
     },
     output: {
       publicPath: isProductionBuild ? "" : "./admin/",
@@ -177,13 +172,12 @@ module.exports = (env, argv) => {
       path: path.resolve(__dirname, `${buildDir}/admin`)
     },
     plugins: [
-      ...config.plugins,
+      ...configTemplate.plugins,
       new HtmlWebpackPlugin({
         template: "src/admin/index.pug"
       })
     ]
   };
-
 
   return [mainConfig, adminConfig];
 };

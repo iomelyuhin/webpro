@@ -7,7 +7,7 @@ import axios from './requests';
 store.$axios = axios
 
 new Vue({
-  el: "#app",
+  el: "#app-root",
   router,
   store,
   render: h => h(App)

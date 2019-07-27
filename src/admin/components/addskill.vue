@@ -22,21 +22,19 @@
         skill: {
           title: "",
           percent: "",
-          category: "?"
+          category: 955
         }
       }
     },
     methods: {
       ...mapActions('skills', ['addSkill']),
-      //async 
-      addNewSkill() {
-        this.addSkill(this.skill)
-        //try {
-        //  await this.addSkill(this.skill)
+      async addNewSkill() {
+        try {
+          await this.addSkill(this.skill)
 
-        //} catch (error) {
-        //  alert (error.message);
-        //}
+        } catch (error) {
+          alert (error.message);
+        }
       } 
     }
   }
