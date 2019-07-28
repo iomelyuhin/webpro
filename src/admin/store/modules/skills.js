@@ -3,6 +3,11 @@ export default {
   state: {
     skills: []
   },
+  mutations: {
+    SET_SKILLS(state, skills) {
+      state.skills = skills
+    }
+  },
   actions: {
     async addSkill(store, newSkill) {
       try {
@@ -14,10 +19,11 @@ export default {
         )
       }
     },
-    async fetchSkills() {
+    async fetchSkills({commit}) {
       try {
-        const response = await this.$axios('skills/161');
-        console.log(response.data);
+        const {data:skills} = await this.$axios('skills/161');
+
+        commit("SET_SKILLS", skills)
         
       } catch (error) {
         

@@ -1,6 +1,7 @@
 <template lang="pug">
   section.about-adm
     .container
+      pre {{skills}}
       .about-adm__row
         h3.about-adm__title Блок "Обо мне"
         button(type="button"
@@ -30,22 +31,35 @@ export default {
     skillsGroup: () => import("../skills-group.vue"),
     addSkill: () => import("../addskill.vue")
   },
-  // computed: {
-  //   ...mapState("categories", state => state.categories)
-  // },
+  computed: {
+    ...mapState("skills", {
+      skills: state => state.skills
+    })
+  },
   methods: {
-    ...mapActions ('categories', ['addCategory']),
-    ...mapActions("skills", ["fetchSkills"]),
-      async addNewCategory() {
-        try {
-          this.addCategory(this.categories)
-          console.log(this.categories);
-          
-        } catch (error) {
-          alert (error.message);
-          
-        }
-      },
+    //...mapActions ('categories', ['addCategory']),
+    ...mapActions('skills', ["fetchSkills"]),
+      // async addNewCategory() {
+        // try {
+          // this.addCategory(this.categories)
+          // console.log(this.categories);
+          // 
+        // } catch (error) {
+          // alert (error.message);
+          // 
+        // }
+      // }
+    // ...mapActions("skills", ["fetchSkills"]),
+      // async addNewCategory() {
+        // try {
+          // this.addCategory(this.categories)
+          // console.log(this.categories);
+          // 
+        // } catch (error) {
+          // alert (error.message);
+          // 
+        // }
+      // },
 
   },
   async created() {

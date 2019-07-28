@@ -28,6 +28,7 @@
     },
     methods: {
       ...mapActions('skills', ['addSkill']),
+      ...mapActions('skills', ['fetchSkills']),
       async addNewSkill() {
         try {
           await this.addSkill(this.skill)
@@ -35,7 +36,22 @@
         } catch (error) {
           alert (error.message);
         }
-      } 
+      },
+      // async fetchSkills() {
+      //   try {
+      //    // await this.addSkill(this.skill)
+
+      //   } catch (error) {
+      //     alert (error.message);
+      //   }
+      // } 
+    },
+    async created() {
+    try {
+      this.fetchSkills();
+    } catch (error) {
+      
     }
+  }
   }
 </script>
