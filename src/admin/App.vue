@@ -12,6 +12,7 @@
   import about from './components/pages/about';
   import projects from './components/pages/projects';
   import feedback from './components/pages/feedback';
+  import skillAddBtns from './components/skillAddBtns';
   import login from './components/pages/login';
 
   export default {
@@ -22,7 +23,8 @@
       about,
       projects,
       feedback,
-      login
+      login,
+      skillAddBtns
     }
   }
 </script>

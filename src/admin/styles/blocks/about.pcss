@@ -64,15 +64,25 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  font-weight: bold;
   border-bottom: 1px solid #C0C0C0;
 }
 .about-adm-grid__item-group-name {
+  pointer-events: none;
   height: 40px;
   width: 60%;
   outline: none;
+  border-bottom: 1px solid transperent;
+  transition: border 0.2s;
+  font-weight: bold;
     &:focus {
       border-bottom: 1px solid #000;
     }
+  &.active {
+    pointer-events: auto;
+    border-bottom: 1px solid $tangerine;
+    transition: border 0.2s;
+  }
 }
 .about-adm-grid__item-ok {
   width: 20px;
@@ -103,21 +113,54 @@
   display: flex;
   justify-content: space-between;
   margin-top: 10px;
+  .about-edit-btns {
+      opacity: 0;
+      transition: opacity 0.2s;
+      &.active {
+        opacity: 1;
+      }
+
+    }
+  &:hover {
+    .about-edit-btns {
+      opacity: 1;
+      transition: opacity 0.2s;
+
+    }
+
+  }
 }
 .about-adm-grid__item-list-skill {
+  pointer-events: none;
   width: 60%;
+  border-bottom: 1px solid transperent;
+  transition: border 0.2s;
+  &.active {
+    pointer-events: auto;
+    border-bottom: 1px solid $tangerine;
+    transition: border 0.2s;
+  }
   
   @include tablets {
     width: 50%;
   }
 }
 .about-adm-grid__item-list-value {
+  pointer-events: none;
   width: 20%;
+  text-align: center;
+  border-bottom: 1px solid transperent;
+  transition: border 0.2s;
+  &.active {
+    pointer-events: auto;  
+    border-bottom: 1px solid $tangerine;
+    transition: border 0.2s;
+
+  }
 }
 .about-adm-grid__item-edit {
   width: 20px;
   height: 20px;
-  margin-left: 10px;
   background: svg-load(
           "pencil.svg",
           fill=rgba(#414c63, 1),
@@ -146,6 +189,9 @@
   padding-left: 10px;
   outline: none;
   border-bottom: 1px solid #000;
+  &.blocked {
+    pointer-events: none;
+  }
 }
 .about-adm-grid__item-skill-value {
   height: 40px;

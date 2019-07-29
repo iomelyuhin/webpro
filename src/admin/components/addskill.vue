@@ -4,11 +4,13 @@
       v-model="skill.title"
       type="text" 
       placeholder="Новый навык"
+      :class="{blocked : formIsBlocked}"
     ).about-adm-grid__item-skill-name
     input(
       v-model="skill.percent"
       type="text" 
       value="100%"
+      :class="{blocked : formIsBlocked}"
     ).about-adm-grid__item-skill-value
     button(type="button"
     @click="addNewSkill").btn-add.btn-add--skill +
@@ -22,36 +24,30 @@
         skill: {
           title: "",
           percent: "",
-          category: 955
-        }
+          category: this.category.id
+        },
+
+        formIsBlocked: false
       }
+    },
+    props: {
+      category: Object
     },
     methods: {
       ...mapActions('skills', ['addSkill']),
-      ...mapActions('skills', ['fetchSkills']),
       async addNewSkill() {
+        this.formIsBlocked = true;
         try {
           await this.addSkill(this.skill)
-
+          this.skill.title = ""
+          this.skill.percent = ""
         } catch (error) {
           alert (error.message);
-        }
-      },
-      // async fetchSkills() {
-      //   try {
-      //    // await this.addSkill(this.skill)
+        } finally {
+          this.formIsBlocked = false;
 
-      //   } catch (error) {
-      //     alert (error.message);
-      //   }
-      // } 
+        }
+      }
     },
-    async created() {
-    try {
-      this.fetchSkills();
-    } catch (error) {
-      
-    }
-  }
   }
 </script>
