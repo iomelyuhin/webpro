@@ -5,9 +5,12 @@ const token = localStorage.getItem("token");
 axios.defaults.baseURL = "https://webdev-api.loftschool.com/";
 
 axios.defaults.headers["Authorization"] = `Bearer ${token}`;
-
+// const proj = axios.get("/skills/161")
+// console.log(
+//   proj
+// );
 axios.interceptors.response.use(
-  function(response) {
+  function (response) {
     return response;
   },
   error => {
