@@ -12,6 +12,14 @@ export default {
     },
     ADD_PROJECT(state, project) {
       state.projects.push(project);
+    },
+    EDIT_PROJECT(state, editedProject) {
+      state.projects = state.projects.map(project => {
+        return project.id === editedProject.id ? editedProject : project;
+      })
+    },
+    REMOVE_PROJECT(state, removingProjectId) {
+      state.projects = state.projects.filter(project => project.id !== removingProjectId);
     }
   },
   actions: {
@@ -20,7 +28,6 @@ export default {
         const response = await this.$axios.get('/works/161');
         commit("SET_PROJECTS", response.data);
 
-        console.log(this.state);
       } catch (error) { }
     },
     async addProject({ commit }, payload) {
@@ -31,6 +38,22 @@ export default {
         return response;
       } catch (error) {
         generateStdError(error);
+      }
+    },
+    async editProject({ commit }, project) {
+      try {
+        const response = await this.$axios.post(`/works/${project.id}`, project);
+        commit("EDIT_PROJECT", project)
+      } catch (error) {
+
+      }
+    },
+    async removeProject({ commit }, projectId) {
+      try {
+        const response = await this.$axios.delete(`/works/${projectId}`);
+        commit("REMOVE_PROJECT", projectId)
+      } catch (error) {
+
       }
     }
   }
