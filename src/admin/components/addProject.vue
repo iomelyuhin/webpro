@@ -1,116 +1,104 @@
 <template lang="pug">
-.projects__item-row
-  .projects__item(:class="{active: editModeOn === true}")
-    h4.projects__item-title Редактирование работы
-    .pojects__item-edit
+.projects__item
+  .projects__item-row
+    h4.projects__item-title Добавление работы
+  .pojects__item-edit
+    .projects__add-img(v-if="!chooseImage")
       label.pojects__item-photo
         .projects__item-photo-text Перетащите или загрузите для загрузки изображения
-        .pojects__item-photo-upload Загрузить
+        a.pojects__item-photo-upload Загрузить
+        input(type="file" accept="image/jpeg" @change='addProjectFile').pojects__item-photo-fake-input
+
+    .projects__add-img(v-else)
+      label.pojects__item-photo(
+        :style="{'backgroundImage' : getAbsoluteImgPath}"
+      )
+        .projects__item-photo-text Перетащите или загрузите для загрузки изображения
+      a.pojects__item-photo-upload Загрузить
+      input(type="file" accept="image/jpeg" @change='addProjectFile').pojects__item-photo-fake-input
+
+    form.projects__item-content
+      label.projects__item-content-label
+        .projects__item-content-label-title Название
         input(
-          type="file" 
-          accept="image/jpeg" 
-          @change="handlePhotoUpload"
-        ).projects__img-input
-      form.projects__item-content
-        label.projects__item-content-label
-          .projects__item-content-label-title Название
-          input(
-            v-model="project.title"
-            type="text"
-          ).projects__item-content-input
-        label.projects__item-content-label Ссылка
-          .projects__item-content-label-title
-          input(
-            v-model="project.link"
-            type="text"
-          ).projects__item-content-input
-        label.projects__item-content-label Описание
-          .projects__item-content-label-title
-          textarea(
-            v-model="project.description"
-            name="projectContent", 
-            cols="30", 
-            rows="10"
-          ).projects__item-content-textarea
-        label.projects__item-content-label
-          .projects__item-content-label-title Добавление тэга
-          input(
-            v-model="project.techs"
-            type="text"
-          ).projects__item-content-input
-        ul.projects__item-content-tags
-          li.projects__item-content-tags-item HTML
-            button(type="button").projects__item-content-tags-item-del
-          li.projects__item-content-tags-item CSS
-            button(type="button").projects__item-content-tags-item-del
-          li.projects__item-content-tags-item JavaScript
-            button(type="button").projects__item-content-tags-item-del
-        .projects__item-content-btn-wrap
-          button(
-            @click="$emit('cancel')"
-            type="button"
-            ).projects__item-content-btn-decline Отмена
-          button(
-            @click="addNewProject"
-            type="button"
-          ).projects__item-content-btn-save Загрузить
-  
-  
+          type="text" 
+          v-model="addProjectData.title"
+        ).projects__item-content-input
+      label.projects__item-content-label Ссылка
+        .projects__item-content-label-title
+        input(
+          type="text" 
+          v-model="addProjectData.link"
+        ).projects__item-content-input
+      label.projects__item-content-label Описание
+        .projects__item-content-label-title
+        textarea(
+          name="projectContent", 
+          cols="30", 
+          rows="10" 
+          v-model="addProjectData.description").projects__item-content-textarea
+      label.projects__item-content-label
+        .projects__item-content-label-title Добавление тэгов
+        input(
+          type="text" 
+          placeholder="Введите тэги через запятую" 
+          v-model="addProjectData.techs").projects__item-content-input
+      //- ul.projects__item-content-tags
+      //-   li.projects__item-content-tags-item HTML
+      //-     button(type="button").projects__item-content-tags-item-del
+      //-   li.projects__item-content-tags-item CSS
+      //-     button(type="button").projects__item-content-tags-item-del
+      //-   li.projects__item-content-tags-item JavaScript
+      //-     button(type="button").projects__item-content-tags-item-del
+      .projects__item-content-btn-wrap
+        button(type="button" @click="$emit('cancelItem')").projects__item-content-btn-decline Отмена
+        button(type="button" @click="addNewProject").projects__item-content-btn-save Загрузить
 </template>
 
 <script>
-import { mapActions, mapState } from "vuex";
-import { renderer, getAbsoluteImgPath } from "@/helpers/pictures";
-
+import requests  from "../requests"
+import {mapActions, mapState} from "vuex"
 export default {
-
   data() {
     return {
-      renderedPhoto: "",
-      project: {
-        id: 0,
+      chooseImage: false,
+      addProjectData: {
         title: "",
         techs: "",
-        link: "",
         photo: "",
-        description: ""
-      }
+        link: "",
+        description: "",
+      },
     }
   },
-  props: {
-    editModeOn: Boolean
-  },
   computed: {
-    ...mapState("projects", {
-      projects: state => state.projects
-    })
+    getAbsoluteImgPath() {
+      var photo = this.addProjectData.photo
+      const baseUrl = requests.defaults.baseURL;
+      return `${baseUrl}/${photo}`;
+    },
   },
   methods: {
-    async handlePhotoUpload(e) {
-      const file = e.target.files[0];
-      this.project.photo = file;
-      try {
-        const rendererResult = await renderer(file);
-        this.renderedPhoto = rendererResult;
-      } catch (error) {
-        console.log(error.message);
-      }
+    addProjectFile(e) {
+      this.addProjectData.photo = e.target.files[0];
+      this.chooseImage = true;
+      console.log(this.currentImagePath)
     },
-    ...mapActions("projects", ["addProject"]),
+    ...mapActions('projects', ['addProject']),
     async addNewProject() {
+      const projectFormData = new FormData();
+      projectFormData.append('title', this.addProjectData.title);
+      projectFormData.append('techs', this.addProjectData.techs);
+      projectFormData.append('photo', this.addProjectData.photo);
+      projectFormData.append('link', this.addProjectData.link);
+      projectFormData.append('description', this.addProjectData.description);
+      console.log(projectFormData)
       try {
-        await this.addProject(this.project);
-        this.$emit('cancel');
-        this.project.title = "";
-        this.project.techs = "";
-        this.project.link = "";
-        this.project.description = "";
-        this.project.photo = "";
-
+        this.addProject(projectFormData);
+        this.$emit('cancelItem');
       } catch (error) {
-        console.log(error.message);
       }
     }
   }
-};
+}
 </script>

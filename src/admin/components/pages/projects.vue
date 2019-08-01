@@ -1,26 +1,30 @@
 <template lang="pug">
-  section.projects
-    .container
-      h3.projects__title Блок «Работы»
-      .projects__item
-      addProject(
-        :editModeOn="editModeOn"
-        @cancel="editModeOn = false"
-        @addNewProject="editmodeOn = false"
+section.projects
+  .container
+    h3.projects__title Блок «Работы»
+    addProject(
+      v-if="addProjectMode"
+      :addProjectMode="addProjectMode"
+      @cancelItem = "addProjectMode = false"
+    )
+    editProject(
+      v-if="editProjectMode"
+      @cancelItem = "editProjectMode = false"
+    )
+    ul.projects__grid
+      li.projects__grid-add
+        button(
+          type="button" 
+          @click="addProjectMode = true").add-btn
+          .add-circle +
+          .add-title Добавить работу
+      projectsGridItem(
+        v-for="project in projects"
+        :project="project"
+        :key="project.id"
+        @editProject="editProjectMode = true"
       )
-      ul.projects__grid
-        li.projects__grid-add
-          button(
-            @click="editModeOn = true"
-            type="button"
-          ).add-btn
-            .add-circle +
-            .add-title Добавить работу
-        projectsList(
-          v-for="project in projects"
-          :key="project.id"
-          :project="project"
-        ) 
+      
 </template>
 
 <script>
@@ -28,28 +32,25 @@ import { mapActions, mapState } from "vuex";
 export default {
   data() {
     return {
-      renderedPhoto: "",
-      editModeOn: false
+      addProjectMode: false,
+      editProjectMode: false
     };
   },
   components: {
-    addProject: () => import("../addProject"),
-    projectsList: () => import("../projectsList")
+    addProject: () => import("../addProject.vue"),
+    editProject: () => import("../editProject.vue"),
+    projectsGridItem: () => import("../projectsGridItem.vue")
   },
   computed: {
     ...mapState("projects", {
       projects: state => state.projects
     })
   },
-
   methods: {
-    ...mapActions("projects", ["fetchProjects", "addProject"])
+    ...mapActions("projects", ["fetchProjects"])
   },
-
-  async created() {
-    try {
-      this.fetchProjects();
-    } catch (error) {}
+  created() {
+    this.fetchProjects();
   }
 };
 </script>
