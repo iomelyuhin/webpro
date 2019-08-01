@@ -7,15 +7,15 @@
       label.pojects__item-photo
         .projects__item-photo-text Перетащите или загрузите для загрузки изображения
         a.pojects__item-photo-upload Загрузить
-        input(type="file" accept="image/jpeg" @change='addProjectFile').pojects__item-photo-fake-input
+        input(type="file" accept="image/jpeg" @change.prevent='addProjectFile').pojects__item-photo-fake-input
 
     .projects__add-img(v-else)
       label.pojects__item-photo(
-        :style="{'backgroundImage' : getAbsoluteImgPath}"
+        :style="{'backgroundImage' : projectPhotoUrl}"
       )
-        .projects__item-photo-text Перетащите или загрузите для загрузки изображения
-      a.pojects__item-photo-upload Загрузить
-      input(type="file" accept="image/jpeg" @change='addProjectFile').pojects__item-photo-fake-input
+      label
+        a.pojects__item-photo-change Изменить превью
+        input(type="file" accept="image/jpeg" @change.prevent='addProjectFile').pojects__item-photo-fake-input
 
     form.projects__item-content
       label.projects__item-content-label
@@ -58,10 +58,12 @@
 <script>
 import requests  from "../requests"
 import {mapActions, mapState} from "vuex"
+import { renderer, getAbsoluteImgPath } from "@/helpers/pictures";
 export default {
   data() {
     return {
       chooseImage: false,
+      renderedPhoto: "",
       addProjectData: {
         title: "",
         techs: "",
@@ -72,17 +74,29 @@ export default {
     }
   },
   computed: {
-    getAbsoluteImgPath() {
-      var photo = this.addProjectData.photo
-      const baseUrl = requests.defaults.baseURL;
-      return `${baseUrl}/${photo}`;
+    projectPhotoUrl() {
+      return `url(${this.renderedPhoto})`;
     },
+    // getAbsoluteImgPath() {
+    //   var photo = this.addProjectData.photo
+    //   const baseUrl = requests.defaults.baseURL;
+    //   return `${baseUrl}/${photo}`;
+    // },
   },
   methods: {
-    addProjectFile(e) {
-      this.addProjectData.photo = e.target.files[0];
-      this.chooseImage = true;
-      console.log(this.currentImagePath)
+    async addProjectFile(e) {
+      const file = e.target.files[0];
+      this.addProjectData.photo = file;
+      try {
+        const rendererResult = await renderer(file);
+        this.renderedPhoto = rendererResult;
+        this.chooseImage = true;
+      } catch (error) {
+        this.showTooltip({
+          type: "error",
+          text: error.message
+        });
+      }
     },
     ...mapActions('projects', ['addProject']),
     async addNewProject() {
