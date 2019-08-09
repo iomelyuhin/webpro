@@ -3,10 +3,11 @@
     .skills-card-title__input
       app-input(
         placeholder="Название новой группы"
-        :value="value"
         :errorText="errorText"
         @input="$emit('input', $event)"
         @keydown.native.enter="$emit('approve')"
+        @keydown.native.space="testMeth"
+        v-model="category.category"
         autofocus
         no-side-paddings
       )
@@ -15,6 +16,7 @@
         iconed-btn(
           class="is-tick no-words"
           @click="$emit('approve')"
+
         )
       .skills-card-title__btn
         iconed-btn(
@@ -27,11 +29,17 @@
 export default {
   props: {
     value: String,
-    errorText: String
+    errorText: String,
+    category: Object
   },
   components: {
     iconedBtn: () => import("../components/iconed-btn.vue"),
     appInput: () => import("../components/input.vue")
+  },
+  methods: {
+   testMeth () {
+     
+   } 
   }
 };
 </script>

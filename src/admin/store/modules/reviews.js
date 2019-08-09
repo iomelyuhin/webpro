@@ -52,6 +52,7 @@ export default {
       try {
         const response = await this.$axios.delete(`/reviews/${reviewId}`);
         commit("REMOVE_REVIEW", reviewId);
+        
         return response;
       } catch (error) {
         generateStdError(error);

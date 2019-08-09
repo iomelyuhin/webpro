@@ -8,6 +8,7 @@
       v-model="newTitle"
       @approve="changeSkillTitle"
       @closeOrRemove="removeCategory"
+      :category="categoryData"
     )
 
     .skills-card-title(v-else)  
@@ -48,6 +49,7 @@ export default {
         const response = await this.updateSkillsGroup({
           id: this.categoryData.id,
           title: this.newTitle
+          
         });
 
         this.editmode = false;

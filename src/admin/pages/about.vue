@@ -78,7 +78,7 @@ export default {
     this.collectCategories();
   },
   methods: {
-    ...mapActions("skills", ["storeSkillsGroup", "fetchCategories"]),
+    ...mapActions("skills", ["storeSkillsGroup", "fetchCategories", "updateSkillsGroup"]),
     ...mapActions("tooltips", ["showTooltip"]),
     ...mapMutations("skills", ["ADD_SKILLS_CATEGORY"]),
     close() {
@@ -104,7 +104,7 @@ export default {
           title: this.title
         });
 
-        this.showAddingCard = false;
+        this.showAddingCard = true;
         this.title = "";
 
         this.showTooltip({
