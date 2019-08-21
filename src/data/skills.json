@@ -2,9 +2,9 @@
   {
     "skillsGroup": "Frontend",
     "skills": {
-      "html5": 90,
-      "css3": 50,
-      "Gulp": 70,
+      "HTML5": 90,
+      "CSS3":80,
+      "Js": 50,
       "Vue": 30
     }
   },
@@ -13,7 +13,7 @@
     "skills": {
       "Git": 30,
       "Terminal": 60,
-      "Gulp": 30,
+      "Pug": 30,
       "Webpack": 70
     }
   }

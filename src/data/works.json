@@ -1,26 +1,26 @@
 [
   {
     "id": 1,
-    "title": "1 Сайт школы онлайн образования",
-    "skills": "1 Html, Css, JavaScript",
+    "title": "Проект \"Коворкинг\"",
+    "skills": "HTML, SCSS, BEM",
     "photo": "work-01.jpg",
-    "link": "//google.com",
-    "desc": "1 Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!"
+    "link": "https://iomelyuhin.github.io/webbegin/",
+    "desc": "Мой первый учебный проект в рамках курса \"Основы верстки\" от LoftSchool. Меня научили азам верстки и постоения каркаса сайта."
   },
   {
     "id": 2,
-    "title": "2 Сайт школы онлайн образования",
-    "skills": "2 Html, Css, JavaScript",
+    "title": "Проект \"Шоколадки\"",
+    "skills": "HTML5, SCSS, SVG, JavaScript, JQuery, Gulp",
     "photo": "work-02.jpg",
-    "link": "//yandex.ru",
-    "desc": "2 Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!"
+    "link": "https://iomelyuhin.github.io/webmiddle/dist/index.html",
+    "desc": "Мой учебный проект от Loftschool. В рамках этого проекта я изучил основы языка JS и углубленно изучил верстку, в том числе и адаптивную. Освоил инструмент Gulp."
   },
   {
     "id": 3,
-    "title": "3 Сайт школы онлайн образования",
-    "skills": "3 Html, Css, JavaScript",
+    "title": "SPA-приложение моего портфолио",
+    "skills": "Pug, pcss, WebPack, Vue.js",
     "photo": "work-03.jpg",
-    "link": "//rambler.ru",
-    "desc": "3 Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!"
+    "link": "https://iomelyuhin.github.io/webpro/admin/",
+    "desc": "Мой учебный проект от Loftschool. Меня научили работать с инструментоми WebPack, Pug. Изучил основные подходы работы с фрэймворком Vue."
   }
 ]

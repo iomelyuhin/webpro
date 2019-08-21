@@ -1,5 +1,5 @@
 script(type="text/x-template")#utility-list
-  .utility__cont
+  .utility__cont 
     .utility__infograms(v-for="util in utilities")
       row(
         :util="util"
@@ -7,7 +7,7 @@ script(type="text/x-template")#utility-list
 
 script(type="text/x-template")#utility-row
   .utility__row
-    h3.utility__infograms-tittle {{util.skillsGroup}}
+    h3.utility__infograms-tittle {{util.skillsGroup}} 
     ul.utility__infograms-list
       li.utility__infograms-item(v-for="(perc, name) in util.skills") 
         utility(

@@ -1,4 +1,6 @@
 import Vue from "vue";
+import { mapActions, mapState } from "vuex";
+
 
 const utility = {
   template: "#utility",
@@ -46,5 +48,6 @@ new Vue({
   created() {
     const data = require("../data/skills.json");
     this.utilities = data;
+
   }
 });
