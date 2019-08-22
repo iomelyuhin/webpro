@@ -10,7 +10,7 @@
   {
     "id": 2,
     "title": "Проект \"Шоколадки\"",
-    "skills": "HTML5, SCSS, SVG, JavaScript, JQuery, Gulp",
+    "skills": "HTML5, SCSS, SVG, JavaScript, JQuery",
     "photo": "work-02.jpg",
     "link": "https://iomelyuhin.github.io/webmiddle/dist/index.html",
     "desc": "Мой учебный проект от Loftschool. В рамках этого проекта я изучил основы языка JS и углубленно изучил верстку, в том числе и адаптивную. Освоил инструмент Gulp."
