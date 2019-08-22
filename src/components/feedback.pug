@@ -1,24 +1,24 @@
 section.feedback#feedback
   .container
     h2.feedback__title.title Связаться со мной
-    form.feedback__form(action="" id="myForm")
+    form.feedback__form(action="../send.php" id="myForm" method="post")
       .feedback__form-cont
         .feedback__form-row
           label.feedback__form-insert
             h5.feedback__form-name Введите ваше имя
             .feedback__form-enter-wrap
-              input.feedback__form-enter(type="text" placeholder="Fedya" name="user-name")
+              input.feedback__form-enter(type="text" placeholder="Омелюхин Илья" name="name")
               +icon('user', 'feedback__form-icon')
           label.feedback__form-insert
             h5.feedback__form-name Введите ваш email
             .feedback__form-enter-wrap
-              input.feedback__form-enter(type="text" placeholder="youremail@gmail.com" name="user-email") 
+              input.feedback__form-enter(type="text" placeholder="i.omelyuhinl@gmail.com" name="email") 
               +icon('envelope', 'feedback__form-icon')
         .feedback__form-row
           label.feedback__form-insert
             h5.feedback__form-name Сообщение к письму
             .feedback__form-enter-wrap
-              textarea.feedback__form-enter(type="text" placeholder="Ваше сообщение" name="user-message")
+              textarea.feedback__form-enter(type="text" placeholder="Нужно разработать сайт для продажи моих товаров." name="message")
               +icon('message', 'feedback__form-icon')
       .feedback__form-btn-wrap
         button.feedback__form-btn(type="submit" id="sendButton") Отправить
