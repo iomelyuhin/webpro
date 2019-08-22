@@ -18,8 +18,7 @@ script(type="text/x-template")#reviews-slides
     article.reviews__text {{review.text}}
     .reviews__author
       .reviews__photo
-        img(:src="'src/images/content/' + review.pic").reviews__pic
-       
+        img(:src="review.pic").reviews__pic
       .reviews__author-desc
         h4.reviews__author-name {{review.name}}
         .reviews__prof {{review.occ}}
